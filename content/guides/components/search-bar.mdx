@@ -1,0 +1,44 @@
+---
+title: SearchBar
+description: Client-side docs search UI.
+template: default
+---
+
+# SearchBar
+
+Search component for indexing and querying docs content.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `documents` | `Array<{ title: string, excerpt: string, route: string }>` | Yes | Search corpus. |
+| `placeholder` | `string` | No | Input placeholder text. |
+
+## Live examples
+
+<SearchBar
+	placeholder="Search docs examples..."
+	documents={[
+		{ title: 'Quickstart', excerpt: 'Install and run MiniWiki.', route: '/guides/quickstart' },
+		{ title: 'JSON Reference', excerpt: 'All config keys.', route: '/guides/json-reference/index' },
+		{ title: 'Components', excerpt: 'One page per component.', route: '/guides/components/index' },
+	]}
+/>
+
+## Code
+
+```mdx
+<SearchBar
+	placeholder="Search docs examples..."
+	documents={[
+		{ title: 'Quickstart', excerpt: 'Install and run MiniWiki.', route: '/guides/quickstart' },
+		{ title: 'JSON Reference', excerpt: 'All config keys.', route: '/guides/json-reference/index' },
+	]}
+/>
+```
+
+## Notes
+
+- Used by `Header` when search is enabled.
+- Placeholder defaults to `Search docs...`.

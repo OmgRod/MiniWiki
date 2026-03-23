@@ -1,0 +1,39 @@
+---
+title: footer.json Reference
+description: Full key reference for footer columns and legal links.
+template: default
+---
+
+# footer.json Reference
+
+File: `content/footer.json`
+
+## Top-level keys
+
+| Key | Type | Required | Description |
+| --- | --- | --- | --- |
+| `columns` | `array` | Yes | Footer column definitions. |
+| `tagLine` | `string` | Yes | Footer tagline text. |
+| `bottomLinks` | `array` | Yes | Lower-row legal/utility links. |
+| `copyright` | `string` | Yes | Copyright line. |
+
+## `columns[]` object keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `columns[].title` | `string` | Yes | Column heading text. |
+| `columns[].links` | `array` | Yes | Link list within column. |
+
+## `columns[].links[]` object keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `columns[].links[].label` | `string` | Yes | Link display label. |
+| `columns[].links[].url` | `string` | Yes | Destination URL/path/mailto. |
+
+## `bottomLinks[]` object keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `bottomLinks[].label` | `string` | Yes | Link display label. |
+| `bottomLinks[].url` | `string` | Yes | Destination URL/path. |

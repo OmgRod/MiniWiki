@@ -1,0 +1,37 @@
+---
+title: header.json Reference
+description: Full key reference for top navigation links.
+template: default
+---
+
+# header.json Reference
+
+File: `content/header.json`
+
+## Top-level keys
+
+| Key | Type | Required | Description |
+| --- | --- | --- | --- |
+| `links` | `array` | Yes | Ordered list of top-navigation link objects. |
+
+## `links[]` object keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `links[].title` | `string` | Yes | Text displayed in header nav. |
+| `links[].path` | `string` | Yes | URL/path target for the link. |
+
+## Current example
+
+```json
+{
+  "links": [
+    { "title": "Home", "path": "/" },
+    { "title": "Introduction", "path": "/guides/introduction" },
+    { "title": "Quickstart", "path": "/guides/quickstart" },
+    { "title": "Architecture", "path": "/guides/codebase-architecture" },
+    { "title": "Authoring", "path": "/guides/components/index" },
+    { "title": "Config", "path": "/guides/json-reference/index" }
+  ]
+}
+```

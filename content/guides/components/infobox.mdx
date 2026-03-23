@@ -1,0 +1,53 @@
+---
+title: Infobox
+description: Wikipedia-style summary panel with key facts.
+template: default
+---
+
+# Infobox
+
+Use `Infobox` for article metadata summaries.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | No | Infobox heading. |
+| `image` | `string` | No | Image URL/path. |
+| `imageAlt` | `string` | No | Image alt text. |
+| `imageCaption` | `string` | No | Caption under image. |
+| `items` | `Array<{ label: string, value: ReactNode }>` | Yes | Key-value metadata rows. |
+
+## Live examples
+
+<Infobox
+  title="MiniWiki"
+  items={[
+    { label: 'Type', value: 'Documentation system' },
+    { label: 'License', value: 'MIT' },
+  ]}
+/>
+
+<Infobox
+  title="Release Snapshot"
+  image="https://placehold.co/640x360/0f172a/e2e8f0?text=MiniWiki"
+  imageAlt="MiniWiki placeholder graphic"
+  imageCaption="Release graphic"
+  items={[
+    { label: 'Version', value: 'v1.0' },
+    { label: 'Status', value: 'Stable' },
+    { label: 'Hosting', value: 'GitHub Pages' },
+  ]}
+/>
+
+## Code
+
+```mdx
+<Infobox
+  title="MiniWiki"
+  items={[
+    { label: 'Type', value: 'Documentation system' },
+    { label: 'License', value: 'MIT' },
+  ]}
+/>
+```

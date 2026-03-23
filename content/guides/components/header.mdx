@@ -1,0 +1,46 @@
+---
+title: Header
+description: Top navigation bar and global controls.
+template: default
+---
+
+# Header
+
+Renders branding, top links, search, and theme toggle.
+
+## Data dependencies
+
+- `content/header.json` for `links`
+- `content/site.json` for header toggles and search placeholder
+
+## Live example
+
+<Header
+	headerConfig={{
+		links: [
+			{ title: 'Home', path: '/' },
+			{ title: 'Components', path: '/guides/components/index' },
+			{ title: 'GitHub', path: 'https://github.com/OmgRod/MiniWiki' },
+		],
+	}}
+	searchDocuments={[
+		{ title: 'Quickstart', excerpt: 'Install and run.', route: '/guides/quickstart' },
+		{ title: 'JSON Reference', excerpt: 'All keys.', route: '/guides/json-reference/index' },
+	]}
+	siteConfig={{
+		siteName: 'MiniWiki',
+		header: { showSearch: true, showDarkModeToggle: true, searchPlaceholder: 'Search docs...' },
+		layout: { maxWidthClass: 'max-w-7xl' },
+	}}
+/>
+
+## Code
+
+```mdx
+<Header headerConfig={{ links: [{ title: 'Home', path: '/' }] }} searchDocuments={[]} siteConfig={{ siteName: 'MiniWiki' }} />
+```
+
+## Notes
+
+- `showSearch` controls search bar rendering.
+- `showDarkModeToggle` controls theme switch rendering.

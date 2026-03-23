@@ -1,0 +1,43 @@
+---
+title: DefinitionList
+description: Render glossary-style term-definition pairs.
+template: default
+---
+
+# DefinitionList
+
+Useful for glossaries, schema terms, and concept references.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `items` | `Array<{ term: string, definition: ReactNode }>` | Yes | Term-definition pairs. |
+
+## Live examples
+
+<DefinitionList
+  items={[
+    { term: 'MDX', definition: 'Markdown with JSX support.' },
+    { term: 'Preset', definition: 'A wiki-wide layout/style profile.' },
+  ]}
+/>
+
+<DefinitionList
+  items={[
+    { term: 'Header', definition: 'Top navigation and global controls.' },
+    { term: 'Sidebar', definition: 'Primary docs hierarchy and navigation.' },
+    { term: 'Footer', definition: 'Bottom links and legal information.' },
+  ]}
+/>
+
+## Code
+
+```mdx
+<DefinitionList
+  items={[
+    { term: 'MDX', definition: 'Markdown with JSX support.' },
+    { term: 'Preset', definition: 'A wiki-wide layout/style profile.' },
+  ]}
+/>
+```

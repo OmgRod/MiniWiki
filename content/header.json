@@ -4,7 +4,7 @@
     { "title": "Introduction", "path": "/guides/introduction" },
     { "title": "Quickstart", "path": "/guides/quickstart" },
     { "title": "Architecture", "path": "/guides/codebase-architecture" },
-    { "title": "Authoring", "path": "/guides/components-and-icons" },
-    { "title": "Config", "path": "/guides/site-config" }
+    { "title": "Components", "path": "/guides/components/index" },
+    { "title": "JSON Reference", "path": "/guides/json-reference/index" }
   ]
 }

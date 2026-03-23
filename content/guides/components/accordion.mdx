@@ -1,0 +1,81 @@
+---
+title: Accordion
+description: Collapsible content panels for FAQs and dense docs.
+template: default
+---
+
+# Accordion
+
+Renders collapsible sections from an `items` array.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `items` | `Array<{ id: string, title: string, content: ReactNode }>` | Yes | Accordion rows to render. |
+
+## Live examples
+
+<Accordion
+  items={[
+    { id: 'what', title: 'What is MiniWiki?', content: 'A configurable MDX docs site.' },
+    { id: 'nest', title: 'Can I nest components?', content: 'Yes, MDX supports composition.' },
+  ]}
+/>
+
+<Accordion
+  items={[
+    {
+      id: 'install',
+      title: 'Install',
+      content: (
+        <>
+          Run <Kbd>npm</Kbd> <Kbd>run</Kbd> <Kbd>dev</Kbd>.
+          <Callout icon="tool">Use Node 20+ for consistency.</Callout>
+        </>
+      ),
+    },
+    {
+      id: 'publish',
+      title: 'Publish',
+      content: 'Push to main to trigger your GitHub Pages workflow.',
+    },
+  ]}
+/>
+
+## Code
+
+### Basic FAQ
+
+```mdx
+<Accordion
+  items={[
+    { id: 'what', title: 'What is MiniWiki?', content: 'A configurable MDX docs site.' },
+    { id: 'nest', title: 'Can I nest components?', content: 'Yes, MDX supports composition.' },
+  ]}
+/>
+```
+
+### Rich content in panels
+
+```mdx
+<Accordion
+  items={[
+    {
+      id: 'install',
+      title: 'Install',
+      content: (
+        <>
+          Run <Kbd>npm</Kbd> <Kbd>run</Kbd> <Kbd>dev</Kbd>.
+          <Callout icon="tool">Use Node 20+ for consistency.</Callout>
+        </>
+      ),
+    },
+    {
+      id: 'publish',
+      title: 'Publish',
+      content: 'Push to main to trigger your GitHub Pages workflow.',
+    },
+  ]}
+/>
+```

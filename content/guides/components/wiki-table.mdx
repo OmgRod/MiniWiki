@@ -1,0 +1,64 @@
+---
+title: WikiTable
+description: Full table primitives for advanced tabular docs.
+template: default
+---
+
+# WikiTable
+
+Use these primitives for precise table markup in MDX.
+
+## Exports
+
+- `Table`
+- `Caption`
+- `THead`
+- `TBody`
+- `TR`
+- `TH`
+- `TD`
+
+## Live examples
+
+<Table>
+  <Caption>Release matrix</Caption>
+  <THead>
+    <TR>
+      <TH>Version</TH>
+      <TH>Status</TH>
+      <TH>Notes</TH>
+    </TR>
+  </THead>
+  <TBody>
+    <TR>
+      <TD>1.0</TD>
+      <TD>Stable</TD>
+      <TD>Production ready</TD>
+    </TR>
+    <TR>
+      <TD>1.1</TD>
+      <TD>Planned</TD>
+      <TD>Expanded reference docs</TD>
+    </TR>
+  </TBody>
+</Table>
+
+## Code
+
+```mdx
+<Table>
+  <Caption>Release matrix</Caption>
+  <THead>
+    <TR>
+      <TH>Version</TH>
+      <TH>Status</TH>
+    </TR>
+  </THead>
+  <TBody>
+    <TR>
+      <TD>1.0</TD>
+      <TD>Stable</TD>
+    </TR>
+  </TBody>
+</Table>
+```

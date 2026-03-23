@@ -1,0 +1,57 @@
+---
+title: Footer
+description: JSON-driven multi-column site footer.
+template: default
+---
+
+# Footer
+
+Renders footer layout from `content/footer.json`.
+
+## Data dependencies
+
+- `columns`
+- `tagLine`
+- `bottomLinks`
+- `copyright`
+
+## Live example
+
+<Footer
+	siteConfig={{ siteName: 'MiniWiki' }}
+	footerConfig={{
+		columns: [
+			{
+				title: 'Essential',
+				links: [
+					{ label: 'Home', url: '/' },
+					{ label: 'Quickstart', url: '/guides/quickstart' },
+				],
+			},
+			{
+				title: 'Community',
+				links: [
+					{ label: 'GitHub', url: 'https://github.com/OmgRod/MiniWiki' },
+					{ label: 'Discord', url: 'https://discord.gg/vK3DuqJwyW' },
+				],
+			},
+		],
+		tagLine: 'Built for creators, teams, and technical docs.',
+		bottomLinks: [
+			{ label: 'Privacy', url: '/guides/legal/privacy-policy' },
+			{ label: 'Terms', url: '/guides/legal/terms-of-use' },
+		],
+		copyright: '© 2026 MiniWiki.',
+	}}
+/>
+
+## Code
+
+```mdx
+<Footer siteConfig={{ siteName: 'MiniWiki' }} footerConfig={{ columns: [] }} />
+```
+
+## Notes
+
+- Supports internal and external links.
+- Uses consistent theme tokens across presets.

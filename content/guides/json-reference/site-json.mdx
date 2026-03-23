@@ -1,0 +1,67 @@
+---
+title: site.json Reference
+description: Full key reference for global site configuration.
+template: default
+---
+
+# site.json Reference
+
+File: `content/site.json`
+
+## Top-level keys
+
+| Key | Type | Required | Description |
+| --- | --- | --- | --- |
+| `siteName` | `string` | Yes | Primary site/brand name shown in UI. |
+| `siteDescription` | `string` | Yes | Default site description used in metadata and docs context. |
+| `titleSuffix` | `string` | Yes | Suffix appended to page titles. |
+| `wikiPreset` | `string` | Yes | Global layout/theme preset (`docs`, `minimal`, `portal`, etc.). |
+| `header` | `object` | Yes | Header behavior configuration object. |
+| `pageTemplates` | `object` | Yes | Page-template feature configuration. |
+| `layout` | `object` | Yes | Layout sizing utility classes. |
+
+## `header` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `header.showSearch` | `boolean` | Yes | Shows/hides the header search bar. |
+| `header.showDarkModeToggle` | `boolean` | Yes | Shows/hides dark-mode toggle in header. |
+| `header.searchPlaceholder` | `string` | Yes | Placeholder text for search input. |
+
+## `pageTemplates` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `pageTemplates.enabled` | `boolean` | Yes | Enables frontmatter template overrides. |
+| `pageTemplates.defaultTemplate` | `string` | Yes | Fallback template ID when no template is set. |
+
+## `layout` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `layout.maxWidthClass` | `string` | Yes | Tailwind max-width utility for main container. |
+| `layout.sidebarWidthClass` | `string` | Yes | Tailwind width utility for sidebar column. |
+
+## Current example
+
+```json
+{
+  "siteName": "MiniWiki",
+  "siteDescription": "Official MiniWiki template documentation.",
+  "titleSuffix": "MiniWiki Docs",
+  "wikiPreset": "portal",
+  "header": {
+    "showSearch": true,
+    "showDarkModeToggle": true,
+    "searchPlaceholder": "Search docs..."
+  },
+  "pageTemplates": {
+    "enabled": false,
+    "defaultTemplate": "default"
+  },
+  "layout": {
+    "maxWidthClass": "max-w-7xl",
+    "sidebarWidthClass": "md:w-72"
+  }
+}
+```

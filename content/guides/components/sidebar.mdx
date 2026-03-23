@@ -1,0 +1,59 @@
+---
+title: Sidebar
+description: Hierarchical documentation navigation component.
+template: default
+---
+
+# Sidebar
+
+Renders grouped navigation sections from `content/sidebar.json`.
+
+## Data dependencies
+
+- `sections[].title`
+- `sections[].collapsible`
+- `sections[].items[].title`
+- `sections[].items[].path`
+
+## Live example
+
+<div className="my-4 max-w-xs">
+	<Sidebar
+		currentPath="/guides/components/index"
+		sidebarConfig={{
+			sections: [
+				{
+					title: 'Components',
+					collapsible: true,
+					items: [
+						{ title: 'Components Index', path: '/guides/components/index' },
+						{ title: 'Card', path: '/guides/components/card' },
+						{ title: 'Alert', path: '/guides/components/alert' },
+					],
+				},
+			],
+		}}
+	/>
+</div>
+
+## Code
+
+```mdx
+<Sidebar
+	currentPath="/guides/components/index"
+	sidebarConfig={{
+		sections: [
+			{
+				title: 'Components',
+				collapsible: true,
+				items: [{ title: 'Card', path: '/guides/components/card' }],
+			},
+		],
+	}}
+/>
+```
+
+## Notes
+
+- Supports section collapsing when enabled.
+- Primary nav source for deep docs structures.

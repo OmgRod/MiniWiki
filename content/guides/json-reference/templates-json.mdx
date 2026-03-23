@@ -1,0 +1,59 @@
+---
+title: templates.json Reference
+description: Full key reference for page-template defaults and registry.
+template: default
+---
+
+# templates.json Reference
+
+File: `content/templates.json`
+
+## Top-level keys
+
+| Key | Type | Required | Description |
+| --- | --- | --- | --- |
+| `defaultTemplate` | `string` | Yes | Global fallback template ID. |
+| `defaults` | `object` | Yes | Per-template default metadata payloads. |
+| `registry` | `object` | Yes | Template definitions available by ID. |
+
+## `defaults.guide` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `defaults.guide.level` | `string` | Yes | Default level label for guide pages. |
+| `defaults.guide.audience` | `string` | Yes | Default audience label for guide pages. |
+
+## `defaults.landing` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `defaults.landing.cta` | `object` | Yes | Default call-to-action block. |
+| `defaults.landing.cta.label` | `string` | Yes | CTA label text. |
+| `defaults.landing.cta.href` | `string` | Yes | CTA destination path/URL. |
+| `defaults.landing.features` | `array` | Yes | Landing feature cards list. |
+| `defaults.landing.features[].title` | `string` | Yes | Feature title. |
+| `defaults.landing.features[].description` | `string` | Yes | Feature description. |
+
+## `defaults.reference` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `defaults.reference.version` | `string` | Yes | Reference version label. |
+| `defaults.reference.sections` | `array` | Yes | Reference section link definitions. |
+
+## `registry` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `registry.default` | `object` | Yes | Base template metadata. |
+| `registry.default.name` | `string` | Yes | Human-readable template name. |
+| `registry.default.description` | `string` | Yes | Template description. |
+| `registry.guide` | `object` | Yes | Guide template metadata. |
+| `registry.guide.name` | `string` | Yes | Human-readable template name. |
+| `registry.guide.description` | `string` | Yes | Template description. |
+| `registry.landing` | `object` | Yes | Landing template metadata. |
+| `registry.landing.name` | `string` | Yes | Human-readable template name. |
+| `registry.landing.description` | `string` | Yes | Template description. |
+| `registry.reference` | `object` | Yes | Reference template metadata. |
+| `registry.reference.name` | `string` | Yes | Human-readable template name. |
+| `registry.reference.description` | `string` | Yes | Template description. |

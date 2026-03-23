@@ -1,0 +1,50 @@
+---
+title: Badge
+description: Compact status labels for metadata and tags.
+template: default
+---
+
+# Badge
+
+Use badges for states, versions, and taxonomy tags.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `variant` | `'default' \| 'primary' \| 'success' \| 'warning' \| 'danger'` | No | Color style variant. |
+| `children` | `ReactNode` | Yes | Badge text/content. |
+
+## Examples
+
+### Live examples
+
+<div className="my-4 flex flex-wrap gap-2">
+	<Badge>Draft</Badge>
+	<Badge variant="primary">Featured</Badge>
+	<Badge variant="success">Stable</Badge>
+	<Badge variant="warning">Deprecated Soon</Badge>
+	<Badge variant="danger">Deprecated</Badge>
+</div>
+
+### Code
+
+#### Default
+
+```mdx
+<Badge>Draft</Badge>
+```
+
+#### Primary
+
+```mdx
+<Badge variant="primary">Featured</Badge>
+```
+
+#### Success, warning, danger
+
+```mdx
+<Badge variant="success">Stable</Badge>
+<Badge variant="warning">Deprecated Soon</Badge>
+<Badge variant="danger">Deprecated</Badge>
+```

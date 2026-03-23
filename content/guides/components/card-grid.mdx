@@ -1,0 +1,42 @@
+---
+title: CardGrid
+description: Grid wrapper for multiple cards.
+template: default
+---
+
+# CardGrid
+
+Arrange cards in responsive columns.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `columns` | `number` | No | Preferred column count. |
+| `children` | `ReactNode` | Yes | Usually `Card` elements. |
+
+## Live examples
+
+### 2-column grid
+
+<CardGrid columns={2}>
+  <Card title="Guides" description="How-to docs" />
+  <Card title="Reference" description="Detailed APIs" />
+</CardGrid>
+
+### 3-column grid
+
+<CardGrid columns={3}>
+  <Card title="Authoring" description="MDX writing patterns" />
+  <Card title="Config" description="JSON-driven setup" />
+  <Card title="Deploy" description="GitHub Pages workflow" />
+</CardGrid>
+
+## Code
+
+```mdx
+<CardGrid columns={2}>
+  <Card title="Guides" description="How-to docs" />
+  <Card title="Reference" description="Detailed APIs" />
+</CardGrid>
+```

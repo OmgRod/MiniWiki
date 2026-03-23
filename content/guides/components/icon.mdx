@@ -1,0 +1,34 @@
+---
+title: Icon
+description: Named icon wrapper powered by lucide-react.
+template: default
+---
+
+# Icon
+
+Render icons by name for consistent visual language.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | Yes | Icon key (e.g., `settings`, `rocket`). |
+| `size` | `number` | No | Icon size in pixels. |
+| `className` | `string` | No | Extra utility classes. |
+
+## Live examples
+
+<div className="my-4 flex flex-wrap items-center gap-3">
+	<Icon name="info" />
+	<Icon name="rocket" />
+	<Icon name="settings" />
+	<Icon name="search" />
+	<Icon name="security" />
+	<Icon name="terminal" size={20} />
+</div>
+
+## Code
+
+```mdx
+<Icon name="settings" size={18} />
+```

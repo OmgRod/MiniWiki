@@ -1,0 +1,43 @@
+---
+title: Figure
+description: Image block with optional caption.
+template: default
+---
+
+# Figure
+
+`Figure` wraps media with consistent border/caption styling.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `src` | `string` | Yes | Image source URL/path. |
+| `alt` | `string` | No | Accessible alt text. |
+| `caption` | `string` | No | Figure caption text. |
+| `width` | `string` | No | CSS width value. |
+
+## Live examples
+
+<Figure
+  src="https://placehold.co/1200x500/0f172a/e2e8f0?text=MiniWiki+Layout"
+  alt="MiniWiki layout placeholder"
+  caption="Default width figure"
+/>
+
+<Figure
+  src="https://placehold.co/600x300/1e293b/cbd5e1?text=Component+Preview"
+  alt="Component preview placeholder"
+  caption="Custom width figure"
+  width="75%"
+/>
+
+## Code
+
+```mdx
+<Figure
+  src="/images/wiki-layout.png"
+  alt="Wiki layout overview"
+  caption="Core layout zones"
+/>
+```

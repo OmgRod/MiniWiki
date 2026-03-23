@@ -1,0 +1,45 @@
+---
+title: FeatureList
+description: Uniform list UI for capability summaries.
+template: default
+---
+
+# FeatureList
+
+Renders a styled list of feature strings.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `items` | `string[]` | Yes | Feature list entries. |
+
+## Live examples
+
+<FeatureList
+  items={[
+    'JSON-driven navigation',
+    'MDX component ecosystem',
+    'GitHub Pages deployment workflow',
+  ]}
+/>
+
+<FeatureList
+  items={[
+    'Search with FlexSearch',
+    'Theme toggle with persistence',
+    'Code blocks with copy button',
+  ]}
+/>
+
+## Code
+
+```mdx
+<FeatureList
+  items={[
+    'JSON-driven navigation',
+    'MDX component ecosystem',
+    'GitHub Pages deployment workflow',
+  ]}
+/>
+```

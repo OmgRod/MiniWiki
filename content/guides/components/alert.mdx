@@ -1,0 +1,71 @@
+---
+title: Alert
+description: Highlight critical info with semantic variants.
+template: default
+---
+
+# Alert
+
+Displays a message block with optional title and variant type.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `type` | `'info' \| 'warning' \| 'success' \| 'danger'` | No | Visual variant. |
+| `title` | `string` | No | Optional heading line. |
+| `children` | `ReactNode` | No | Alert body content. |
+
+## Examples
+
+### Live examples
+
+<Alert title="Heads up">
+  JSON edits are reflected immediately after page refresh.
+</Alert>
+
+<Alert type="warning" title="Check before deploy">
+  Confirm all sidebar links point to existing pages.
+</Alert>
+
+<Alert type="success" title="Published">
+  Your docs site deployed successfully.
+</Alert>
+
+<Alert type="danger" title="Build failed">
+  A referenced MDX route is missing. Fix links and redeploy.
+</Alert>
+
+### Code
+
+#### Info (default)
+
+```mdx
+<Alert title="Heads up">
+  JSON edits are reflected immediately after page refresh.
+</Alert>
+```
+
+#### Warning
+
+```mdx
+<Alert type="warning" title="Check before deploy">
+  Confirm all sidebar links point to existing pages.
+</Alert>
+```
+
+#### Success
+
+```mdx
+<Alert type="success" title="Published">
+  Your docs site deployed successfully.
+</Alert>
+```
+
+#### Danger
+
+```mdx
+<Alert type="danger" title="Build failed">
+  A referenced MDX route is missing. Fix links and redeploy.
+</Alert>
+```

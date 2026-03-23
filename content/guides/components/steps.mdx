@@ -1,0 +1,44 @@
+---
+title: Steps
+description: Ordered procedural steps with clear progression.
+template: default
+---
+
+# Steps
+
+Renders a styled sequence of steps.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `items` | `string[]` | Yes | Step labels in display order. |
+
+## Live examples
+
+<Steps
+  items={[
+    'Create an MDX page under content/guides/',
+    'Add the route to content/sidebar.json',
+    'Commit and publish changes',
+  ]}
+/>
+
+<Steps
+  items={[
+    'Install dependencies',
+    'Run npm run dev',
+    'Open localhost:3000',
+  ]}
+/>
+
+## Code
+
+```mdx
+<Steps
+  items={[
+    'Create page',
+    'Add to sidebar',
+  ]}
+/>
+```

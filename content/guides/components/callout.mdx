@@ -1,0 +1,58 @@
+---
+title: Callout
+description: Emphasized content block with icon support.
+template: default
+---
+
+# Callout
+
+Use callouts for important narrative notes and tips.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `icon` | `string` | No | Icon name resolved by `Icon`. |
+| `children` | `ReactNode` | Yes | Callout content. |
+
+## Examples
+
+### Live examples
+
+<Callout>
+  Keep docs task-oriented and skimmable.
+</Callout>
+
+<Callout icon="rocket">
+  Push to main to publish to GitHub Pages.
+</Callout>
+
+<Callout icon="tool">
+  Update `sidebar.json` whenever you add new guides.
+</Callout>
+
+### Code
+
+#### Default icon
+
+```mdx
+<Callout>
+  Keep docs task-oriented and skimmable.
+</Callout>
+```
+
+#### Rocket callout
+
+```mdx
+<Callout icon="rocket">
+  Push to main to publish to GitHub Pages.
+</Callout>
+```
+
+#### Tooling callout
+
+```mdx
+<Callout icon="tool">
+  Update `sidebar.json` whenever you add new guides.
+</Callout>
+```

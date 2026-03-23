@@ -1,0 +1,40 @@
+---
+title: mdx-components Registry
+description: Central mapping that exposes components to MDX.
+template: default
+---
+
+# mdx-components Registry
+
+File: `components/mdx-components.js`
+
+This registry maps imported React components to MDX tags.
+
+## Responsibilities
+
+- Exposes components like `Alert`, `Card`, `Infobox`, and `WikiTable` primitives.
+- Overrides markdown element renderers (`pre`, `table`, `thead`, `tbody`, `tr`, `th`, `td`, `caption`).
+- Defines what can be used directly inside `.mdx` content.
+
+## When to update
+
+- After adding a new component intended for MDX pages.
+- When changing global markdown element rendering behavior.
+
+## Live examples of registry mappings
+
+The examples below are rendered through the registry:
+
+<Alert type="info" title="Mapped component">
+	`Alert` is available directly in MDX without manual import.
+</Alert>
+
+<Callout icon="settings">
+	`Callout` and `Icon` are also mapped globally.
+</Callout>
+
+| Mapping | Result |
+| --- | --- |
+| `pre` | Uses `CodeBlock` |
+| `table` | Uses `WikiTable.Table` |
+| `th` / `td` | Uses `WikiTable.TH` / `WikiTable.TD` |

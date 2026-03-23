@@ -1,0 +1,41 @@
+---
+title: CodeBlock
+description: Syntax-highlighted fenced code with copy support.
+template: default
+---
+
+# CodeBlock
+
+`CodeBlock` is used directly and as the default renderer for `pre` blocks.
+
+## Behavior
+
+- Detects code language from fenced code blocks.
+- Shows copy button in rendered blocks.
+- Supports light and dark themes.
+
+## Direct example
+
+```tsx
+const isReady = true;
+
+if (isReady) {
+	console.log('MiniWiki is ready');
+}
+```
+
+## Live markdown render example
+
+```js
+export function add(a, b) {
+	return a + b;
+}
+```
+
+## Markdown example
+
+````mdx
+```js
+const ok = true;
+```
+````

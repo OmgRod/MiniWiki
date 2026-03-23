@@ -1,0 +1,63 @@
+---
+title: Card
+description: Structured content container with title and description.
+template: default
+---
+
+# Card
+
+Build visual content blocks for summaries and navigation hubs.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | No | Card title. |
+| `description` | `string` | No | Supporting summary. |
+| `children` | `ReactNode` | No | Additional body content. |
+
+## Examples
+
+### Live examples
+
+<Card title="Reference" description="API and schema details." />
+
+<Card title="Get Started" description="Install and run locally.">
+	<ButtonLink href="/guides/quickstart" variant="primary">Open Quickstart</ButtonLink>
+</Card>
+
+<Card title="What you get">
+	<ul>
+		<li>MDX routing</li>
+		<li>JSON-driven navigation</li>
+		<li>Search and theming</li>
+	</ul>
+</Card>
+
+### Code
+
+#### Basic card
+
+```mdx
+<Card title="Reference" description="API and schema details." />
+```
+
+#### Card with actions
+
+```mdx
+<Card title="Get Started" description="Install and run locally.">
+	<ButtonLink href="/guides/quickstart" variant="primary">Open Quickstart</ButtonLink>
+</Card>
+```
+
+#### Card with custom body content
+
+```mdx
+<Card title="What you get">
+	<ul>
+		<li>MDX routing</li>
+		<li>JSON-driven navigation</li>
+		<li>Search and theming</li>
+	</ul>
+</Card>
+```

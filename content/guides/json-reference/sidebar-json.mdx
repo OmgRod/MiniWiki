@@ -1,0 +1,35 @@
+---
+title: sidebar.json Reference
+description: Full key reference for sidebar section hierarchy.
+template: default
+---
+
+# sidebar.json Reference
+
+File: `content/sidebar.json`
+
+## Top-level keys
+
+| Key | Type | Required | Description |
+| --- | --- | --- | --- |
+| `sections` | `array` | Yes | Ordered sidebar section list. |
+
+## `sections[]` object keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `sections[].title` | `string` | Yes | Section heading text. |
+| `sections[].collapsible` | `boolean` | Yes | Whether section can be collapsed in UI. |
+| `sections[].items` | `array` | Yes | List of navigable pages in section. |
+
+## `sections[].items[]` object keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `sections[].items[].title` | `string` | Yes | Navigation label for page. |
+| `sections[].items[].path` | `string` | Yes | URL/path target for that item. |
+
+## Notes
+
+- Order of `sections` controls sidebar section order.
+- Order of `items` controls link order within each section.

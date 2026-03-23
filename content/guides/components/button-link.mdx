@@ -1,0 +1,47 @@
+---
+title: ButtonLink
+description: Link styled as a button for strong CTAs.
+template: default
+---
+
+# ButtonLink
+
+`ButtonLink` renders an anchor with button styling.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `href` | `string` | Yes | Link destination. |
+| `variant` | `'default' \| 'primary' \| 'ghost'` | No | Visual button style. |
+| `children` | `ReactNode` | Yes | Button label. |
+
+## Examples
+
+### Live examples
+
+<div className="my-4 flex flex-wrap gap-2">
+	<ButtonLink href="/guides/quickstart" variant="primary">Start Setup</ButtonLink>
+	<ButtonLink href="/guides/components/index">Browse Components</ButtonLink>
+	<ButtonLink href="/guides/troubleshooting" variant="ghost">Need Help?</ButtonLink>
+</div>
+
+### Code
+
+#### Primary CTA
+
+```mdx
+<ButtonLink href="/guides/quickstart" variant="primary">Start Setup</ButtonLink>
+```
+
+#### Default button-link
+
+```mdx
+<ButtonLink href="/guides/components/index">Browse Components</ButtonLink>
+```
+
+#### Ghost style
+
+```mdx
+<ButtonLink href="/guides/troubleshooting" variant="ghost">Need Help?</ButtonLink>
+```
