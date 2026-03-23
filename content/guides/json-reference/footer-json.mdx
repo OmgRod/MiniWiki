@@ -15,7 +15,7 @@ File: `content/footer.json`
 | `columns` | `array` | Yes | Footer column definitions. |
 | `tagLine` | `string` | Yes | Footer tagline text. |
 | `bottomLinks` | `array` | Yes | Lower-row legal/utility links. |
-| `copyright` | `string` | Yes | Copyright line. |
+| `copyright` | `string` | Yes | Copyright line. Supports `{{year}}` placeholder for current year. |
 
 ## `columns[]` object keys
 
@@ -37,3 +37,13 @@ File: `content/footer.json`
 | --- | --- | --- | --- |
 | `bottomLinks[].label` | `string` | Yes | Link display label. |
 | `bottomLinks[].url` | `string` | Yes | Destination URL/path. |
+
+## Auto year placeholder
+
+Use `{{year}}` in the copyright text to automatically render the current year.
+
+```json
+{
+	"copyright": "© {{year}} MiniWiki. All rights reserved."
+}
+```

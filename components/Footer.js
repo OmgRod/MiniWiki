@@ -46,13 +46,23 @@ function getColumnPlacementClass(index, total) {
   return 'md:col-span-3';
 }
 
+function resolveCopyright(value) {
+  if (!value) {
+    return value;
+  }
+
+  const year = String(new Date().getFullYear());
+  return value.replaceAll('{{year}}', year);
+}
+
 export default function Footer({ siteConfig, footerConfig }) {
   const columns = footerConfig?.columns || [];
   const bottomLinks = footerConfig?.bottomLinks || [];
-  const copyright =
+  const copyrightText =
     footerConfig?.copyright ||
     siteConfig?.footer?.text ||
     'MiniWiki Documentation · Built with MiniWiki';
+  const copyright = resolveCopyright(copyrightText);
   const tagLine = footerConfig?.tagLine || '';
 
   return (

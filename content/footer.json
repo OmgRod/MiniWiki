@@ -28,5 +28,5 @@
     { "label": "Terms", "url": "/guides/legal/terms-of-use" },
     { "label": "Contact", "url": "/guides/legal/contact" }
   ],
-  "copyright": "© 2026 MiniWiki. All rights reserved."
+  "copyright": "© {{year}} MiniWiki. All rights reserved."
 }
