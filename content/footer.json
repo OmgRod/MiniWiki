@@ -1,0 +1,32 @@
+{
+  "columns": [
+    {
+      "title": "Essential",
+      "links": [
+        { "label": "Home", "url": "/" },
+        { "label": "Introduction", "url": "/guides/introduction" },
+        { "label": "Quickstart", "url": "/guides/quickstart" },
+        { "label": "Site Config", "url": "/guides/site-config" },
+        { "label": "Troubleshooting", "url": "/guides/troubleshooting" }
+      ]
+    },
+    {
+      "title": "Social",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/OmgRod" },
+        { "label": "MiniWiki Repository", "url": "https://github.com/OmgRod/MiniWiki" },
+        { "label": "YouTube", "url": "https://www.youtube.com/@OmgRodYT" },
+        { "label": "X / Twitter", "url": "https://x.com/0mgRod" },
+        { "label": "Discord", "url": "https://discord.gg/vK3DuqJwyW" },
+        { "label": "Email", "url": "mailto:rod@omgrod.me" }
+      ]
+    }
+  ],
+  "tagLine": "Built for creators, teams, and technical docs.",
+  "bottomLinks": [
+    { "label": "Privacy", "url": "/guides/legal/privacy-policy" },
+    { "label": "Terms", "url": "/guides/legal/terms-of-use" },
+    { "label": "Contact", "url": "/guides/legal/contact" }
+  ],
+  "copyright": "© 2026 MiniWiki. All rights reserved."
+}

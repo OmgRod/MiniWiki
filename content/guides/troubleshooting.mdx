@@ -1,0 +1,31 @@
+---
+title: Troubleshooting
+description: Fix common MiniWiki setup and rendering problems.
+template: default
+---
+
+# Troubleshooting
+
+## Markdown styles look plain
+
+- Ensure dependencies are installed (`npm install`)
+- Restart dev server after dependency changes
+
+## Route not found
+
+- Verify MDX file path under `content/`
+- Check sidebar/header link paths match route output
+
+## Code block copy button missing
+
+- Ensure latest `components/CodeBlock.js` is in use
+- Confirm page is rendering fenced code blocks
+
+## Navigation not updating
+
+- Edit `content/sidebar.json` and `content/header.json`
+- Refresh browser after JSON changes
+
+<Alert type="warning" title="Still stuck?">
+Run a clean install (`rm -rf node_modules` + `npm install`) and rebuild.
+</Alert>

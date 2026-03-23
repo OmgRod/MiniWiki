@@ -1,0 +1,28 @@
+---
+title: Publishing Workflow
+description: Recommended Git workflow for wiki content changes.
+template: default
+---
+
+# Publishing Workflow
+
+MiniWiki content is file-based, so Git is the source of truth.
+
+## Suggested workflow
+
+1. Create a branch for doc updates
+2. Edit MDX + JSON files in `content/`
+3. Run `npm run build` locally
+4. Open a pull request
+5. Merge after review
+6. Deploy with your platform pipeline
+
+## Why this works
+
+- Full history for content edits
+- Reviewable diffs for docs
+- Safe rollback path
+
+<Callout icon="git">
+Treat docs as code: branch, review, merge, release.
+</Callout>

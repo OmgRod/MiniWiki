@@ -1,0 +1,33 @@
+---
+title: Site Config
+description: Configure MiniWiki global behavior and identity.
+template: default
+---
+
+# Site Config
+
+Main config file: `content/site.json`
+
+## Common fields
+
+- `siteName`
+- `siteDescription`
+- `titleSuffix`
+- `wikiPreset`
+- `header.showSearch`
+- `header.showDarkModeToggle`
+- `footer.text`
+
+## Template behavior
+
+- `pageTemplates.enabled`: enables/disables per-page template overrides
+- `pageTemplates.defaultTemplate`: fallback template
+
+## Layout behavior
+
+- `layout.maxWidthClass`
+- `layout.sidebarWidthClass`
+
+<Callout icon="tool">
+For most projects, set `wikiPreset` and keep page templates disabled for consistency.
+</Callout>

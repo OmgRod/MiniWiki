@@ -1,0 +1,31 @@
+---
+title: Theming and Presets
+description: Apply a full-site look with wiki presets.
+template: default
+---
+
+# Theming and Presets
+
+MiniWiki uses **site-wide presets** for overall look and structure.
+
+## Available presets
+
+- `docs`
+- `minimal`
+- `portal`
+
+## Change preset
+
+Update `content/site.json`:
+
+```json
+{
+  "wikiPreset": "minimal"
+}
+```
+
+This changes the shell styling across header, sidebar, content area, and footer.
+
+<Callout icon="sparkles">
+Use presets to brand one wiki differently from another without changing core code.
+</Callout>

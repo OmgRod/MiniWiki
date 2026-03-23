@@ -1,0 +1,62 @@
+{
+  "sections": [
+    {
+      "title": "Overview",
+      "collapsible": true,
+      "items": [
+        { "title": "Home", "path": "/" },
+        { "title": "Introduction", "path": "/guides/introduction" }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "collapsible": true,
+      "items": [
+        { "title": "Quickstart", "path": "/guides/quickstart" },
+        { "title": "Content Structure", "path": "/guides/content-structure" },
+        { "title": "Codebase Architecture", "path": "/guides/codebase-architecture" }
+      ]
+    },
+    {
+      "title": "Configuration",
+      "collapsible": true,
+      "items": [
+        { "title": "Navigation JSON", "path": "/guides/navigation-config" },
+        { "title": "Site Config", "path": "/guides/site-config" }
+      ]
+    },
+    {
+      "title": "Authoring",
+      "collapsible": true,
+      "items": [
+        { "title": "MDX + Icons", "path": "/guides/components-and-icons" },
+        { "title": "Customizing Components", "path": "/guides/customizing-components" },
+        { "title": "Writing Guidelines", "path": "/guides/writing-guidelines" }
+      ]
+    },
+    {
+      "title": "Theming",
+      "collapsible": true,
+      "items": [
+        { "title": "Wiki Presets", "path": "/guides/theming-and-presets" }
+      ]
+    },
+    {
+      "title": "Operations",
+      "collapsible": true,
+      "items": [
+        { "title": "Publishing Workflow", "path": "/guides/publishing-workflow" },
+        { "title": "Troubleshooting", "path": "/guides/troubleshooting" }
+      ]
+    },
+    {
+      "title": "Legal",
+      "collapsible": true,
+      "items": [
+        { "title": "Privacy Policy", "path": "/guides/legal/privacy-policy" },
+        { "title": "Terms of Use", "path": "/guides/legal/terms-of-use" },
+        { "title": "Contact", "path": "/guides/legal/contact" }
+      ]
+    }
+  ]
+}

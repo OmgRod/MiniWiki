@@ -1,0 +1,53 @@
+---
+title: Codebase Architecture
+description: Understand how MiniWiki is structured end-to-end.
+template: default
+---
+
+# Codebase Architecture
+
+This guide explains the full MiniWiki codebase and how content becomes rendered pages.
+
+## Top-level folders
+
+- `content/`: MDX pages and JSON config
+- `components/`: reusable UI + MDX components
+- `layouts/`: wiki shell and site presets
+- `templates/`: optional page-level wrappers
+- `lib/`: content + navigation loaders
+- `pages/`: Next.js runtime entry points
+- `styles/`: global Tailwind/CSS overrides
+- `public/`: static assets
+
+## Request/render flow
+
+1. Route comes into `pages/[[...slug]].js`
+2. Slug maps to an `.mdx` file in `content/`
+3. Frontmatter is parsed (`gray-matter`)
+4. MDX is serialized (`next-mdx-remote`) with markdown plugins
+5. Site config + nav JSON are loaded
+6. Layout preset wraps page content
+7. MDX renders with registered components from `components/mdx-components.js`
+
+## Content system
+
+- Every `.mdx` file under `content/` becomes a route
+- `content/home.mdx` maps to `/`
+- Nested files map to nested routes
+
+## Configuration system
+
+- `content/site.json`: behavior and branding
+- `content/header.json`: top links
+- `content/sidebar.json`: left navigation
+- `content/templates.json`: template registry/defaults
+
+## Styling system
+
+- Tailwind utilities for component styling
+- Global rules in `styles/globals.css`
+- `wikiPreset` controls site-wide shell styling
+
+<Callout icon="layers">
+Treat `content/` as the source of truth for docs and `components/` as the design system.
+</Callout>

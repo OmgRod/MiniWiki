@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+}
+
+a:not(.miniwiki-button) {
+  @apply text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300;
+}
+
+.prose pre {
+  @apply my-6 bg-transparent p-0;
+}
+
+.prose :where(code):not(:where(pre code)) {
+  @apply rounded bg-slate-100 px-1 py-0.5 text-slate-900 dark:bg-slate-800 dark:text-slate-100;
+}
+
+.prose :where(a.miniwiki-heading-anchor) {
+  @apply no-underline opacity-0 transition;
+}
+
+.prose :where(h1,h2,h3,h4,h5,h6):hover a.miniwiki-heading-anchor {
+  @apply opacity-60;
+}
+
+.mdx-content h1,
+.mdx-content h2,
+.mdx-content h3,
+.mdx-content h4,
+.mdx-content h5,
+.mdx-content h6 {
+  @apply mt-6 mb-3 font-bold tracking-tight text-slate-900 dark:text-slate-100;
+}
+
+.mdx-content h1 {
+  @apply text-3xl;
+}
+
+.mdx-content h2 {
+  @apply text-2xl;
+}
+
+.mdx-content h3 {
+  @apply text-xl;
+}
+
+.mdx-content p {
+  @apply my-3 leading-7;
+}
+
+.mdx-content ul {
+  @apply my-4 list-disc pl-6;
+}
+
+.mdx-content ol {
+  @apply my-4 list-decimal pl-6;
+}
+
+.mdx-content li {
+  @apply my-1;
+}
+
+.mdx-content strong {
+  @apply font-semibold text-slate-900 dark:text-slate-50;
+}
+
+.mdx-content em {
+  @apply italic;
+}
+
+.mdx-content blockquote {
+  @apply my-4 border-l-2 border-slate-300 pl-4 text-slate-700 dark:border-slate-600 dark:text-slate-300;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-4;
+}
+
+[data-wiki-preset='minimal'] .miniwiki-header,
+[data-wiki-preset='minimal'] .miniwiki-sidebar,
+[data-wiki-preset='minimal'] .miniwiki-footer {
+  @apply border-transparent bg-transparent;
+}
+
+[data-wiki-preset='minimal'] .miniwiki-card,
+[data-wiki-preset='minimal'] .miniwiki-alert,
+[data-wiki-preset='minimal'] .miniwiki-callout {
+  @apply rounded-md shadow-none;
+}
+
+[data-wiki-preset='portal'] {
+  @apply bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900;
+}
+
+[data-wiki-preset='portal'] .miniwiki-header {
+  @apply bg-white/80 dark:bg-slate-950/70;
+}
+
+[data-wiki-preset='portal'] .miniwiki-card,
+[data-wiki-preset='portal'] .miniwiki-alert,
+[data-wiki-preset='portal'] .miniwiki-callout {
+  @apply border-slate-200/70 bg-white/90 backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/80;
+}

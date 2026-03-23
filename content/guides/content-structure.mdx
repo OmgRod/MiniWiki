@@ -1,0 +1,34 @@
+---
+title: Content Structure
+description: Understand how files map to routes in MiniWiki.
+template: default
+---
+
+# Content Structure
+
+MiniWiki generates routes from MDX files under `content/`.
+
+## Route mapping rules
+
+- `content/home.mdx` → `/`
+- `content/guides/quickstart.mdx` → `/guides/quickstart`
+- `content/guides/site-config.mdx` → `/guides/site-config`
+
+## Recommended structure
+
+```text
+content/
+  home.mdx
+  guides/
+    introduction.mdx
+    quickstart.mdx
+    ...
+  sidebar.json
+  header.json
+  site.json
+  templates.json
+```
+
+<Callout icon="layers">
+Keep docs pages inside `content/guides/` for a clean and predictable wiki structure.
+</Callout>

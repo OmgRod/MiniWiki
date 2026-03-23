@@ -1,0 +1,19 @@
+{
+  "siteName": "MiniWiki",
+  "siteDescription": "Official MiniWiki template documentation.",
+  "titleSuffix": "MiniWiki Docs",
+  "wikiPreset": "portal",
+  "header": {
+    "showSearch": true,
+    "showDarkModeToggle": true,
+    "searchPlaceholder": "Search docs..."
+  },
+  "pageTemplates": {
+    "enabled": false,
+    "defaultTemplate": "default"
+  },
+  "layout": {
+    "maxWidthClass": "max-w-7xl",
+    "sidebarWidthClass": "md:w-72"
+  }
+}
