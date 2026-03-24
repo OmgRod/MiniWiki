@@ -1,0 +1,53 @@
+name: Question / Support
+description: Ask a question about setup, usage, or troubleshooting
+title: "[Question]: "
+labels: ["question"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out.
+        Include enough context so others can help you quickly.
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: What is your question about?
+      placeholder: Deployment, configuration, component usage...
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Question details
+      description: Describe what you tried and where you're stuck
+      placeholder: |
+        I'm trying to...
+        I expected...
+        But I got...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Project context
+      description: Share relevant environment details
+      placeholder: |
+        OS: ...
+        Node version: ...
+        Hosting target: ...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I reviewed the README and docs before asking.
+          required: true

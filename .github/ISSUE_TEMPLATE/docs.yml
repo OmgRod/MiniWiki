@@ -1,0 +1,59 @@
+name: Documentation Improvement
+description: Suggest an improvement to docs, guides, or examples
+title: "[Docs]: "
+labels: ["documentation"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve the documentation quality and clarity.
+
+  - type: input
+    id: page
+    attributes:
+      label: Affected page or section
+      description: Provide a URL or path (if available)
+      placeholder: /guides/json-reference/site-json
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is unclear or incorrect?
+      description: Explain what needs improvement
+      placeholder: This section is confusing because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: Share your proposed wording or structure
+      placeholder: It would be clearer if...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: Type of docs issue
+      options:
+        - Missing info
+        - Incorrect info
+        - Outdated info
+        - Typos/grammar
+        - Examples/code snippets
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked if this is already covered elsewhere in the docs.
+          required: true

@@ -1,0 +1,74 @@
+name: Bug Report
+description: Report a bug to help us improve MiniWiki
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug.
+        Please provide as much detail as possible so we can reproduce and fix it quickly.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the issue
+      placeholder: Something broke...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Go to...
+        2. Click...
+        3. See error...
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: It should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual behavior
+      description: What actually happened?
+      placeholder: It actually...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, browser, app/version, and any relevant setup details
+      placeholder: |
+        OS: Windows 11
+        Browser: Chrome 134
+        MiniWiki version/commit: ...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues for duplicates.
+          required: true
+        - label: I can reproduce this on the latest version.
+          required: false
