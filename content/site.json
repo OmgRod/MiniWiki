@@ -10,15 +10,16 @@
     "text": "MiniWiki",
     "logoClassName": "h-7 w-auto"
   },
-  "wikiPreset": "portal",
+  "wikiPreset": "docs",
+  "defaultTemplate": "midnight",
   "header": {
     "showSearch": true,
     "showDarkModeToggle": true,
     "searchPlaceholder": "Search docs..."
   },
   "pageTemplates": {
-    "enabled": false,
-    "defaultTemplate": "default"
+    "enabled": true,
+    "defaultTemplate": "midnight"
   },
   "editPage": {
     "enabled": true,

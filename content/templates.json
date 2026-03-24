@@ -1,6 +1,8 @@
 {
   "defaultTemplate": "default",
   "defaults": {
+    "aura": {},
+    "forest": {},
     "guide": {
       "level": "Guide",
       "audience": "Developers"
@@ -16,15 +18,24 @@
         { "title": "Template System", "description": "Choose page templates from frontmatter." }
       ]
     },
+    "midnight": {},
     "reference": {
       "version": "v1",
       "sections": []
     }
   },
   "registry": {
+    "aura": {
+      "name": "Aura Template",
+      "description": "Cozy faint magenta/pink content shell in dark mode."
+    },
     "default": {
       "name": "Default Template",
       "description": "Standard prose layout for most wiki pages."
+    },
+    "forest": {
+      "name": "Forest Template",
+      "description": "Subtle emerald-tinted content shell for dark mode."
     },
     "guide": {
       "name": "Guide Template",
@@ -33,6 +44,10 @@
     "landing": {
       "name": "Landing Template",
       "description": "Hero-focused template for section homepages."
+    },
+    "midnight": {
+      "name": "Midnight Template",
+      "description": "Deep indigo content shell for a denser dark-mode look."
     },
     "reference": {
       "name": "Reference Template",

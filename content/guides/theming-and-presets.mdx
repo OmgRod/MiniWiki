@@ -39,6 +39,27 @@ wikiPreset: minimal
 
 Supported values: `docs`, `minimal`, `portal`.
 
+## Cozy magenta and other style variants (templates)
+
+The `aura`, `forest`, and `midnight` variants are available as **page templates** now (not wiki presets).
+
+Use one site-wide in `content/site.json`:
+
+```json
+{
+  "defaultTemplate": "aura"
+}
+```
+
+Override on a page with frontmatter as usual:
+
+```mdx
+---
+title: Example Page
+template: forest
+---
+```
+
 ## Edit-page link controls (frontmatter)
 
 Per page, you can control the edit-page button:
@@ -59,6 +80,24 @@ editPageUrl: https://example.com/my-custom-edit-target
 editPageText: Propose an edit
 ---
 ```
+
+## Next/previous docs navigation (frontmatter)
+
+MiniWiki automatically shows Previous/Next page buttons for pages that are present in `content/sidebar.json` (using sidebar order).
+
+You can disable either button per page:
+
+```mdx
+---
+title: Example Page
+disablePrevPage: true
+disableNextPage: false
+---
+```
+
+- `disablePrevPage: true` hides only the Previous button.
+- `disableNextPage: true` hides only the Next button.
+- If a page is first/last in sidebar order, only the available button is shown.
 
 ## Global edit-page config
 

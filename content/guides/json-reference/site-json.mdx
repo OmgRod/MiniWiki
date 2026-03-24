@@ -14,6 +14,7 @@ File: `content/site.json`
 - Navbar brand: `branding.display`, `branding.logoPath`, `branding.text`
 - Browser tab icon: `faviconPath`
 - Default look: `wikiPreset`
+- Site-wide template style: `defaultTemplate`
 - Header behavior: `header.showSearch`, `header.showDarkModeToggle`, `header.searchPlaceholder`
 - Edit button: `editPage.*`
 - Shell width: `layout.maxWidthClass`, `layout.sidebarWidthClass`
@@ -27,7 +28,8 @@ File: `content/site.json`
 | `titleSuffix` | `string` | Yes | Suffix appended to page titles. |
 | `faviconPath` | `string` | Yes | Icon path for `<link rel="icon">` (for example `/favicon.png`, `/favicon.svg`, `/favicon.ico`). |
 | `branding` | `object` | Yes | Navbar brand display configuration (logo/text mode and paths). |
-| `wikiPreset` | `string` | Yes | Global layout/theme preset (`docs`, `minimal`, `portal`, etc.). |
+| `wikiPreset` | `string` | Yes | Global layout/theme preset (`docs`, `minimal`, `portal`). |
+| `defaultTemplate` | `string` | Yes | Site-wide default page template (overridable per page via frontmatter `template`). |
 | `header` | `object` | Yes | Header behavior configuration object. |
 | `pageTemplates` | `object` | Yes | Page-template feature configuration. |
 | `editPage` | `object` | Yes | Per-page “Edit this page” link configuration. |
@@ -153,11 +155,17 @@ Use these keys inside a page file:
 ---
 title: Example
 wikiPreset: minimal
+template: aura
 editPage: false
 editPageUrl: https://example.com/custom
 editPageText: Propose an edit
+disablePrevPage: true
+disableNextPage: true
 ---
 ```
+
+`disablePrevPage` and `disableNextPage` control the docs Previous/Next buttons independently for that page.
+By default, page navigation is shown when the page exists in `content/sidebar.json`.
 
 ## Current example
 

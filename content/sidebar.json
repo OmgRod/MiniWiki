@@ -81,9 +81,9 @@
       "title": "Legal",
       "collapsible": true,
       "items": [
-        { "title": "Privacy Policy", "path": "/guides/legal/privacy-policy" },
-        { "title": "Terms of Use", "path": "/guides/legal/terms-of-use" },
-        { "title": "Contact", "path": "/guides/legal/contact" }
+        { "title": "Privacy Policy", "path": "/legal/privacy-policy" },
+        { "title": "Terms of Use", "path": "/legal/terms-of-use" },
+        { "title": "Contact", "path": "/legal/contact" }
       ]
     }
   ]

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Head from 'next/head';
+import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
@@ -40,6 +41,73 @@ function joinUrlParts(...parts) {
     .map((part) => trimSlashes(String(part || '')))
     .filter(Boolean)
     .join('/');
+}
+
+function normalizeRoutePath(routePath = '/') {
+  if (!routePath) {
+    return '/';
+  }
+
+  const normalized = `/${trimSlashes(String(routePath))}`;
+  return normalized === '/' ? '/' : normalized.replace(/\/+$/, '');
+}
+
+function getOrderedSidebarPages(sidebarConfig) {
+  const sections = sidebarConfig?.sections || [];
+  const pages = [];
+  const seen = new Set();
+
+  for (const section of sections) {
+    const items = section?.items || [];
+
+    for (const item of items) {
+      if (!item?.path) {
+        continue;
+      }
+
+      const routePath = normalizeRoutePath(item.path);
+
+      if (seen.has(routePath)) {
+        continue;
+      }
+
+      seen.add(routePath);
+      pages.push({
+        title: item.title || routePath,
+        path: routePath,
+      });
+    }
+  }
+
+  return pages;
+}
+
+function buildPageNavigation({ sidebarConfig, currentPath, frontmatter }) {
+  const orderedPages = getOrderedSidebarPages(sidebarConfig);
+  const normalizedCurrentPath = normalizeRoutePath(currentPath);
+  const currentIndex = orderedPages.findIndex((page) => page.path === normalizedCurrentPath);
+
+  if (currentIndex === -1) {
+    return null;
+  }
+
+  const disablePrevPage = frontmatter?.disablePrevPage === true;
+  const disableNextPage = frontmatter?.disableNextPage === true;
+
+  const previous = !disablePrevPage && currentIndex > 0 ? orderedPages[currentIndex - 1] : null;
+  const next =
+    !disableNextPage && currentIndex < orderedPages.length - 1
+      ? orderedPages[currentIndex + 1]
+      : null;
+
+  if (!previous && !next) {
+    return null;
+  }
+
+  return {
+    previous,
+    next,
+  };
 }
 
 function buildEditPageUrl({ siteConfig, relativePath, frontmatter }) {
@@ -92,6 +160,7 @@ export default function WikiPage({
   templateConfig,
   pagePreset,
   editPage,
+  pageNavigation,
 }) {
   const titleSuffix = siteConfig?.titleSuffix || siteConfig?.siteName || 'MiniWiki';
   const fallbackDescription = siteConfig?.siteDescription || '';
@@ -118,6 +187,43 @@ export default function WikiPage({
       >
         <Template title={title} description={description} templateConfig={templateConfig}>
           <MDXRemote {...mdxSource} components={mdxComponents} />
+
+          {pageNavigation?.previous || pageNavigation?.next ? (
+            <nav
+              className="mt-10 border-t border-slate-200 pt-4 dark:border-slate-800"
+              aria-label="Docs page navigation"
+            >
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+                {pageNavigation.previous ? (
+                  <Link
+                    href={pageNavigation.previous.path}
+                    className="group rounded-lg border border-slate-200 px-4 py-3 transition hover:border-blue-300 hover:bg-blue-50/70 dark:border-slate-800 dark:hover:border-blue-600 dark:hover:bg-blue-950/30"
+                  >
+                    <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      ← Previous
+                    </span>
+                    <span className="block text-sm font-medium text-slate-900 group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300">
+                      {pageNavigation.previous.title}
+                    </span>
+                  </Link>
+                ) : null}
+
+                {pageNavigation.next ? (
+                  <Link
+                    href={pageNavigation.next.path}
+                    className="group rounded-lg border border-slate-200 px-4 py-3 transition hover:border-blue-300 hover:bg-blue-50/70 dark:border-slate-800 dark:hover:border-blue-600 dark:hover:bg-blue-950/30 sm:ml-auto sm:text-right"
+                  >
+                    <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      Next →
+                    </span>
+                    <span className="block text-sm font-medium text-slate-900 group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300">
+                      {pageNavigation.next.title}
+                    </span>
+                  </Link>
+                ) : null}
+              </div>
+            </nav>
+          ) : null}
 
           {editPage?.url ? (
             <div className="mt-10 border-t border-slate-200 pt-4 dark:border-slate-800">
@@ -167,8 +273,13 @@ export async function getStaticProps({ params }) {
   const siteConfig = getSiteConfig();
   const templatesConfig = getTemplatesConfig();
   const pageTemplatesEnabled = siteConfig?.pageTemplates?.enabled !== false;
+  const siteDefaultTemplate =
+    siteConfig?.defaultTemplate ||
+    siteConfig?.pageTemplates?.defaultTemplate ||
+    templatesConfig?.defaultTemplate ||
+    'default';
   const fallbackTemplate =
-    siteConfig?.pageTemplates?.defaultTemplate || templatesConfig?.defaultTemplate || 'default';
+    siteDefaultTemplate;
   const templateKey = pageTemplatesEnabled ? data.template || fallbackTemplate : fallbackTemplate;
 
   const mdxSource = await serialize(content, {
@@ -196,9 +307,15 @@ export async function getStaticProps({ params }) {
   });
 
   const currentPath = slug.length ? `/${slug.join('/')}` : '/';
+  const sidebarConfig = getSidebarConfig();
   const editPageUrl = buildEditPageUrl({
     siteConfig,
     relativePath,
+    frontmatter: data,
+  });
+  const pageNavigation = buildPageNavigation({
+    sidebarConfig,
+    currentPath,
     frontmatter: data,
   });
 
@@ -208,7 +325,7 @@ export async function getStaticProps({ params }) {
       title: data.title || 'Untitled',
       description: data.description || '',
       currentPath,
-      sidebarConfig: getSidebarConfig(),
+      sidebarConfig,
       headerConfig: getHeaderConfig(),
       footerConfig: getFooterConfig(),
       searchDocuments: getPageMetaIndex(),
@@ -224,6 +341,7 @@ export async function getStaticProps({ params }) {
         url: editPageUrl,
         text: data.editPageText || siteConfig?.editPage?.text || 'Edit this page',
       },
+      pageNavigation,
     },
   };
 }
