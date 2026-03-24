@@ -8,6 +8,12 @@ template: default
 
 File: `content/footer.json`
 
+## Most common edits
+
+- Change footer columns and link groups
+- Update legal links in `bottomLinks`
+- Use dynamic year in `copyright`
+
 ## Top-level keys
 
 | Key | Type | Required | Description |
@@ -46,4 +52,10 @@ Use `{{year}}` in the copyright text to automatically render the current year.
 {
 	"copyright": "© {{year}} MiniWiki. All rights reserved."
 }
+```
+
+## Footer link object (copy-ready)
+
+```json
+{ "label": "GitHub", "url": "https://github.com/OmgRod/MiniWiki" }
 ```

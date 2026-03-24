@@ -8,6 +8,12 @@ template: default
 
 File: `content/header.json`
 
+## Most common edits
+
+- Add/remove top nav links in `links`
+- Reorder nav links by moving objects up/down
+- Link internal docs pages or external URLs
+
 ## Top-level keys
 
 | Key | Type | Required | Description |
@@ -30,8 +36,17 @@ File: `content/header.json`
     { "title": "Introduction", "path": "/guides/introduction" },
     { "title": "Quickstart", "path": "/guides/quickstart" },
     { "title": "Architecture", "path": "/guides/codebase-architecture" },
-    { "title": "Authoring", "path": "/guides/components/index" },
-    { "title": "Config", "path": "/guides/json-reference/index" }
+    { "title": "Components", "path": "/guides/components/index" },
+    { "title": "JSON Reference", "path": "/guides/json-reference/index" }
   ]
+}
+```
+
+## External link example
+
+```json
+{
+  "title": "GitHub",
+  "path": "https://github.com/OmgRod/MiniWiki"
 }
 ```

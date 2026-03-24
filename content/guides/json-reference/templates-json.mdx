@@ -8,6 +8,12 @@ template: default
 
 File: `content/templates.json`
 
+## Most common edits
+
+- Set fallback template with `defaultTemplate`
+- Change default metadata under `defaults.*`
+- Rename or adjust template entries under `registry.*`
+
 ## Top-level keys
 
 | Key | Type | Required | Description |
@@ -57,3 +63,14 @@ File: `content/templates.json`
 | `registry.reference` | `object` | Yes | Reference template metadata. |
 | `registry.reference.name` | `string` | Yes | Human-readable template name. |
 | `registry.reference.description` | `string` | Yes | Template description. |
+
+## Frontmatter usage
+
+```mdx
+---
+title: My Page
+template: guide
+---
+```
+
+If `template` is missing, MiniWiki uses `defaultTemplate`.

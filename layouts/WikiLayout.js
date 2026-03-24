@@ -8,8 +8,9 @@ export default function WikiLayout({
   searchDocuments,
   siteConfig,
   footerConfig,
+  presetOverride,
 }) {
-  const wikiPreset = siteConfig?.wikiPreset || 'docs';
+  const wikiPreset = presetOverride || siteConfig?.wikiPreset || 'docs';
   const Preset = resolveWikiPreset(wikiPreset);
 
   return (

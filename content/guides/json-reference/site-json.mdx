@@ -8,6 +8,14 @@ template: default
 
 File: `content/site.json`
 
+## Most common edits
+
+- Brand: `siteName`, `siteDescription`, `titleSuffix`
+- Default look: `wikiPreset`
+- Header behavior: `header.showSearch`, `header.showDarkModeToggle`, `header.searchPlaceholder`
+- Edit button: `editPage.*`
+- Shell width: `layout.maxWidthClass`, `layout.sidebarWidthClass`
+
 ## Top-level keys
 
 | Key | Type | Required | Description |
@@ -18,6 +26,7 @@ File: `content/site.json`
 | `wikiPreset` | `string` | Yes | Global layout/theme preset (`docs`, `minimal`, `portal`, etc.). |
 | `header` | `object` | Yes | Header behavior configuration object. |
 | `pageTemplates` | `object` | Yes | Page-template feature configuration. |
+| `editPage` | `object` | Yes | Per-page “Edit this page” link configuration. |
 | `layout` | `object` | Yes | Layout sizing utility classes. |
 
 ## `header` keys
@@ -35,12 +44,85 @@ File: `content/site.json`
 | `pageTemplates.enabled` | `boolean` | Yes | Enables frontmatter template overrides. |
 | `pageTemplates.defaultTemplate` | `string` | Yes | Fallback template ID when no template is set. |
 
+## `editPage` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `editPage.enabled` | `boolean` | Yes | Global toggle for showing edit-page link. |
+| `editPage.provider` | `string` | Yes | URL builder provider (`github` by default). |
+| `editPage.repository` | `string` | Yes | Repository slug (example: `owner/repo`). |
+| `editPage.branch` | `string` | Yes | Branch used in edit URL. |
+| `editPage.contentPath` | `string` | Yes | Repository folder containing docs content. |
+| `editPage.text` | `string` | Yes | Label shown for edit-page link. |
+| `editPage.baseUrl` | `string` | No | Optional custom base URL for non-GitHub edit links. |
+
 ## `layout` keys
 
 | Key path | Type | Required | Description |
 | --- | --- | --- | --- |
 | `layout.maxWidthClass` | `string` | Yes | Tailwind max-width utility for main container. |
 | `layout.sidebarWidthClass` | `string` | Yes | Tailwind width utility for sidebar column. |
+
+## Recipes
+
+### 1) Set default wiki preset
+
+```json
+{
+  "wikiPreset": "portal"
+}
+```
+
+### 2) Configure GitHub edit-page links
+
+```json
+{
+  "editPage": {
+    "enabled": true,
+    "provider": "github",
+    "repository": "OmgRod/MiniWiki",
+    "branch": "main",
+    "contentPath": "content",
+    "text": "Edit this page"
+  }
+}
+```
+
+### 3) Use custom edit URL base instead of GitHub format
+
+```json
+{
+  "editPage": {
+    "enabled": true,
+    "baseUrl": "https://example.com/edit/docs",
+    "text": "Suggest an edit"
+  }
+}
+```
+
+### 4) Disable edit-page links globally
+
+```json
+{
+  "editPage": {
+    "enabled": false
+  }
+}
+```
+
+## Per-page overrides (frontmatter)
+
+Use these keys inside a page file:
+
+```mdx
+---
+title: Example
+wikiPreset: minimal
+editPage: false
+editPageUrl: https://example.com/custom
+editPageText: Propose an edit
+---
+```
 
 ## Current example
 
@@ -58,6 +140,14 @@ File: `content/site.json`
   "pageTemplates": {
     "enabled": false,
     "defaultTemplate": "default"
+  },
+  "editPage": {
+    "enabled": true,
+    "provider": "github",
+    "repository": "OmgRod/MiniWiki",
+    "branch": "main",
+    "contentPath": "content",
+    "text": "Edit this page"
   },
   "layout": {
     "maxWidthClass": "max-w-7xl",

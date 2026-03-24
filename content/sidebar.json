@@ -52,6 +52,7 @@
         { "title": "Icon", "path": "/guides/components/icon" },
         { "title": "Infobox", "path": "/guides/components/infobox" },
         { "title": "Kbd", "path": "/guides/components/kbd" },
+        { "title": "PresetSearch", "path": "/guides/components/preset-search" },
         { "title": "mdx-components", "path": "/guides/components/mdx-components" },
         { "title": "SearchBar", "path": "/guides/components/search-bar" },
         { "title": "Sidebar", "path": "/guides/components/sidebar" },

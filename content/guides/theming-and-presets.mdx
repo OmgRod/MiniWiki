@@ -26,6 +26,57 @@ Update `content/site.json`:
 
 This changes the shell styling across header, sidebar, content area, and footer.
 
+## Override preset on a single page
+
+You can override the site preset in any page frontmatter:
+
+```mdx
+---
+title: Example Page
+wikiPreset: minimal
+---
+```
+
+Supported values: `docs`, `minimal`, `portal`.
+
+## Edit-page link controls (frontmatter)
+
+Per page, you can control the edit-page button:
+
+```mdx
+---
+title: Internal Page
+editPage: false
+---
+```
+
+Optional custom edit URL override:
+
+```mdx
+---
+title: Custom Edit Target
+editPageUrl: https://example.com/my-custom-edit-target
+editPageText: Propose an edit
+---
+```
+
+## Global edit-page config
+
+Configure default behavior in `content/site.json`:
+
+```json
+{
+  "editPage": {
+    "enabled": true,
+    "provider": "github",
+    "repository": "OmgRod/MiniWiki",
+    "branch": "main",
+    "contentPath": "content",
+    "text": "Edit this page"
+  }
+}
+```
+
 <Callout icon="sparkles">
 Use presets to brand one wiki differently from another without changing core code.
 </Callout>

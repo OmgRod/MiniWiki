@@ -11,6 +11,8 @@ export default function MinimalPreset({
   siteConfig,
   footerConfig,
 }) {
+  const sidebarWidthClass = siteConfig?.layout?.sidebarWidthClass || 'md:w-72';
+
   return (
     <div className="min-h-full" data-wiki-preset="minimal">
       <Header
@@ -18,14 +20,12 @@ export default function MinimalPreset({
         searchDocuments={searchDocuments}
         siteConfig={siteConfig}
       />
-      <div className="mx-auto max-w-5xl px-4 py-6 md:py-8">
-        <div className="mb-6">
-          <Sidebar
-            sidebarConfig={sidebarConfig}
-            currentPath={currentPath}
-            sidebarWidthClass="md:w-full"
-          />
-        </div>
+      <div className="mx-auto flex max-w-5xl flex-col px-4 py-6 md:min-h-[calc(100vh-64px)] md:flex-row md:gap-6 md:py-8">
+        <Sidebar
+          sidebarConfig={sidebarConfig}
+          currentPath={currentPath}
+          sidebarWidthClass={sidebarWidthClass}
+        />
         <main className="w-full">{children}</main>
       </div>
       <Footer siteConfig={siteConfig} footerConfig={footerConfig} />

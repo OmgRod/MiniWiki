@@ -16,6 +16,7 @@ import Header from './Header';
 import Infobox from './Infobox';
 import Icon from './Icon';
 import Kbd from './Kbd';
+import PresetSearch from './PresetSearch';
 import SearchBar from './SearchBar';
 import Sidebar from './Sidebar';
 import Steps from './Steps';
@@ -42,6 +43,7 @@ const mdxComponents = {
   Icon,
   Infobox,
   Kbd,
+  PresetSearch,
   SearchBar,
   Sidebar,
   Steps,

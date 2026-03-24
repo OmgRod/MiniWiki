@@ -1,0 +1,141 @@
+---
+title: PresetSearch
+description: Search pre-defined card results with metadata and tags.
+template: default
+---
+
+# PresetSearch
+
+`PresetSearch` is a standalone content-search component for **your own custom datasets** (not the global docs search).
+
+## What it does
+
+- Filters pre-defined result cards by title, description, tags, and metadata values.
+- Renders results as cards with optional badges and metadata rows.
+- Works directly inside MDX via structured `items` data.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `items` | `Array<{ title: string, description?: string, href?: string, tags?: string[], metadata?: Record<string, unknown> }>` | Yes | Search dataset rendered as cards. |
+| `placeholder` | `string` | No | Input placeholder text. |
+| `emptyMessage` | `string` | No | Message shown when nothing matches. |
+| `limit` | `number` | No | Maximum number of rendered results. |
+
+## Live example: wiki-style catalog search
+
+<PresetSearch
+  placeholder="Search tools, categories, tags, authors..."
+  emptyMessage="No matching catalog entries."
+  items={[
+    {
+      title: 'Authentication Service',
+      description: 'Handles login, sessions, and token refresh.',
+      href: '/guides/codebase-architecture',
+      tags: ['backend', 'security'],
+      metadata: {
+        owner: 'Platform Team',
+        status: 'Stable',
+        category: 'Identity',
+      },
+    },
+    {
+      title: 'UI Component Registry',
+      description: 'Shared UI blocks used across docs pages.',
+      href: '/guides/components/index',
+      tags: ['frontend', 'design-system'],
+      metadata: {
+        owner: 'Docs Team',
+        status: 'Active',
+        category: 'UI',
+      },
+    },
+    {
+      title: 'Deployment Pipeline',
+      description: 'GitHub Actions build and Pages deployment workflow.',
+      href: '/guides/publishing-workflow',
+      tags: ['devops', 'automation'],
+      metadata: {
+        owner: 'Infrastructure',
+        status: 'Stable',
+        category: 'Operations',
+      },
+    },
+    {
+      title: 'JSON Configuration Layer',
+      description: 'Navigation and site behavior controlled by JSON.',
+      href: '/guides/json-reference/index',
+      tags: ['config', 'content'],
+      metadata: {
+        owner: 'Docs Team',
+        status: 'Active',
+        category: 'Configuration',
+      },
+    },
+  ]}
+/>
+
+## Live example: product cards with richer metadata
+
+<PresetSearch
+  placeholder="Search products by title, plan, region, or tags"
+  items={[
+    {
+      title: 'MiniWiki Core',
+      description: 'Base docs platform and rendering engine.',
+      tags: ['product', 'core'],
+      metadata: {
+        plan: 'Free',
+        region: 'Global',
+        updated: '2026-03-24',
+      },
+    },
+    {
+      title: 'MiniWiki Pro',
+      description: 'Advanced analytics and workflow tooling.',
+      tags: ['product', 'pro', 'analytics'],
+      metadata: {
+        plan: 'Paid',
+        region: 'US/EU',
+        updated: '2026-03-18',
+      },
+    },
+    {
+      title: 'MiniWiki Enterprise',
+      description: 'SSO, audit logs, and compliance controls.',
+      tags: ['product', 'enterprise', 'security'],
+      metadata: {
+        plan: 'Enterprise',
+        region: 'Multi-region',
+        updated: '2026-03-21',
+      },
+    },
+  ]}
+/>
+
+## MDX usage pattern
+
+```mdx
+<PresetSearch
+  placeholder="Search..."
+  items={[
+    {
+      title: 'My Card',
+      description: 'Description text',
+      href: '/my/route',
+      tags: ['tag-a', 'tag-b'],
+      metadata: {
+        owner: 'Team Name',
+        status: 'Active',
+      },
+    },
+  ]}
+/>
+```
+
+## Notes
+
+- If `href` is provided, the whole card is clickable.
+- `metadata` values can be strings, numbers, arrays, or nested objects; all are searchable.
+- Use this for curated search experiences (catalogs, directories, showcases), not full-site indexing.

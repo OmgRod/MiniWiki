@@ -12,6 +12,14 @@
     "enabled": false,
     "defaultTemplate": "default"
   },
+  "editPage": {
+    "enabled": true,
+    "provider": "github",
+    "repository": "OmgRod/MiniWiki",
+    "branch": "main",
+    "contentPath": "content",
+    "text": "Edit this page"
+  },
   "layout": {
     "maxWidthClass": "max-w-7xl",
     "sidebarWidthClass": "md:w-72"

@@ -13,6 +13,7 @@ Use callouts for important narrative notes and tips.
 | Prop | Type | Required | Description |
 | --- | --- | --- | --- |
 | `icon` | `string` | No | Icon name resolved by `Icon`. |
+| `variant` | `'default' \| 'caution' \| 'error' \| 'note' \| 'success'` | No | Color variant for the callout block. |
 | `children` | `ReactNode` | Yes | Callout content. |
 
 ## Examples
@@ -21,6 +22,22 @@ Use callouts for important narrative notes and tips.
 
 <Callout>
   Keep docs task-oriented and skimmable.
+</Callout>
+
+<Callout variant="caution" icon="alert">
+  This action can affect existing navigation and links.
+</Callout>
+
+<Callout variant="error" icon="error">
+  Build failed because a referenced page path does not exist.
+</Callout>
+
+<Callout variant="note" icon="book">
+  This is a note-style callout for context and reference details.
+</Callout>
+
+<Callout variant="success" icon="check">
+  Configuration saved and applied successfully.
 </Callout>
 
 <Callout icon="rocket">
@@ -38,6 +55,38 @@ Use callouts for important narrative notes and tips.
 ```mdx
 <Callout>
   Keep docs task-oriented and skimmable.
+</Callout>
+```
+
+#### Caution variant
+
+```mdx
+<Callout variant="caution" icon="alert">
+  This action can affect existing navigation and links.
+</Callout>
+```
+
+#### Error variant
+
+```mdx
+<Callout variant="error" icon="error">
+  Build failed because a referenced page path does not exist.
+</Callout>
+```
+
+#### Note variant
+
+```mdx
+<Callout variant="note" icon="book">
+  This is a note-style callout for context and reference details.
+</Callout>
+```
+
+#### Success variant
+
+```mdx
+<Callout variant="success" icon="check">
+  Configuration saved and applied successfully.
 </Callout>
 ```
 

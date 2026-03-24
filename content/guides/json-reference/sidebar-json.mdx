@@ -8,6 +8,13 @@ template: default
 
 File: `content/sidebar.json`
 
+## Most common edits
+
+- Add a new sidebar section
+- Add links under an existing section
+- Reorder sections and links
+- Toggle section collapse behavior
+
 ## Top-level keys
 
 | Key | Type | Required | Description |
@@ -33,3 +40,16 @@ File: `content/sidebar.json`
 
 - Order of `sections` controls sidebar section order.
 - Order of `items` controls link order within each section.
+
+## Add a new section (copy-ready)
+
+```json
+{
+	"title": "My Section",
+	"collapsible": true,
+	"items": [
+		{ "title": "Overview", "path": "/guides/my-section/overview" },
+		{ "title": "Reference", "path": "/guides/my-section/reference" }
+	]
+}
+```
