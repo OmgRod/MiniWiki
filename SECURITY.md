@@ -2,8 +2,7 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+The table below shows a list of versions that are (not) currently being supported. Every major version released, we DO NOT provide support for the previous major version(s).
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -11,8 +10,4 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+You may report any vulnerabilities through the issues tab or (only if severe) through email. My email can be found in the [contact](https://miniwiki.omgrod.me/legal/contact/) page of MiniWiki.
