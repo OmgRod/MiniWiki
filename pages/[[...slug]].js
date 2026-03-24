@@ -199,8 +199,9 @@ export default function WikiPage({
                     href={pageNavigation.previous.path}
                     className="group rounded-lg border border-slate-200 px-4 py-3 transition hover:border-blue-300 hover:bg-blue-50/70 dark:border-slate-800 dark:hover:border-blue-600 dark:hover:bg-blue-950/30"
                   >
-                    <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                      ← Previous
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      <Icon name="arrowleft" size={14} />
+                      <span>Previous</span>
                     </span>
                     <span className="block text-sm font-medium text-slate-900 group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300">
                       {pageNavigation.previous.title}
@@ -213,8 +214,9 @@ export default function WikiPage({
                     href={pageNavigation.next.path}
                     className="group rounded-lg border border-slate-200 px-4 py-3 transition hover:border-blue-300 hover:bg-blue-50/70 dark:border-slate-800 dark:hover:border-blue-600 dark:hover:bg-blue-950/30 sm:ml-auto sm:text-right"
                   >
-                    <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                      Next →
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 sm:justify-end">
+                      <span>Next</span>
+                      <Icon name="arrowright" size={14} />
                     </span>
                     <span className="block text-sm font-medium text-slate-900 group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300">
                       {pageNavigation.next.title}
