@@ -11,6 +11,8 @@ File: `content/site.json`
 ## Most common edits
 
 - Brand: `siteName`, `siteDescription`, `titleSuffix`
+- Navbar brand: `branding.display`, `branding.logoPath`, `branding.text`
+- Browser tab icon: `faviconPath`
 - Default look: `wikiPreset`
 - Header behavior: `header.showSearch`, `header.showDarkModeToggle`, `header.searchPlaceholder`
 - Edit button: `editPage.*`
@@ -23,6 +25,8 @@ File: `content/site.json`
 | `siteName` | `string` | Yes | Primary site/brand name shown in UI. |
 | `siteDescription` | `string` | Yes | Default site description used in metadata and docs context. |
 | `titleSuffix` | `string` | Yes | Suffix appended to page titles. |
+| `faviconPath` | `string` | Yes | Icon path for `<link rel="icon">` (for example `/favicon.png`, `/favicon.svg`, `/favicon.ico`). |
+| `branding` | `object` | Yes | Navbar brand display configuration (logo/text mode and paths). |
 | `wikiPreset` | `string` | Yes | Global layout/theme preset (`docs`, `minimal`, `portal`, etc.). |
 | `header` | `object` | Yes | Header behavior configuration object. |
 | `pageTemplates` | `object` | Yes | Page-template feature configuration. |
@@ -36,6 +40,16 @@ File: `content/site.json`
 | `header.showSearch` | `boolean` | Yes | Shows/hides the header search bar. |
 | `header.showDarkModeToggle` | `boolean` | Yes | Shows/hides dark-mode toggle in header. |
 | `header.searchPlaceholder` | `string` | Yes | Placeholder text for search input. |
+
+## `branding` keys
+
+| Key path | Type | Required | Description |
+| --- | --- | --- | --- |
+| `branding.display` | `string` | Yes | Brand mode: `logo-and-text`, `logo-only`, or `text-only`. |
+| `branding.logoPath` | `string` | Yes | Path/URL for brand image shown in navbar. |
+| `branding.logoAlt` | `string` | Yes | Accessible alt text for the brand image. |
+| `branding.text` | `string` | Yes | Brand label shown when text mode is enabled. |
+| `branding.logoClassName` | `string` | Yes | Tailwind classes applied to the brand logo image. |
 
 ## `pageTemplates` keys
 
@@ -72,6 +86,27 @@ File: `content/site.json`
   "wikiPreset": "portal"
 }
 ```
+
+### 1b) Configure navbar brand and favicon
+
+```json
+{
+  "faviconPath": "/favicon.png",
+  "branding": {
+    "display": "logo-and-text",
+    "logoPath": "/logo.svg",
+    "logoAlt": "MyWiki logo",
+    "text": "MyWiki",
+    "logoClassName": "h-7 w-auto"
+  }
+}
+```
+
+Switching modes is easy:
+
+- `logo-and-text`: logo on left, name on right
+- `logo-only`: replace whole text with logo
+- `text-only`: no logo, text only
 
 ### 2) Configure GitHub edit-page links
 
@@ -131,6 +166,14 @@ editPageText: Propose an edit
   "siteName": "MiniWiki",
   "siteDescription": "Official MiniWiki template documentation.",
   "titleSuffix": "MiniWiki Docs",
+  "faviconPath": "/favicon.png",
+  "branding": {
+    "display": "logo-and-text",
+    "logoPath": "/favicon.png",
+    "logoAlt": "MiniWiki logo",
+    "text": "MiniWiki",
+    "logoClassName": "h-7 w-auto"
+  },
   "wikiPreset": "portal",
   "header": {
     "showSearch": true,

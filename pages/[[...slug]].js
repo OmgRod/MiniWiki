@@ -11,6 +11,7 @@ import WikiLayout from '../layouts/WikiLayout';
 import mdxComponents from '../components/mdx-components';
 import { mergeTemplateConfig, resolveTemplate } from '../templates';
 import Icon from '../components/Icon'
+import { normalizeAssetPath } from '../lib/asset-path';
 
 const {
   CONTENT_DIR,
@@ -94,6 +95,7 @@ export default function WikiPage({
 }) {
   const titleSuffix = siteConfig?.titleSuffix || siteConfig?.siteName || 'MiniWiki';
   const fallbackDescription = siteConfig?.siteDescription || '';
+  const faviconPath = normalizeAssetPath(siteConfig?.faviconPath || '/favicon.ico');
   const Template = resolveTemplate(template);
 
   return (
@@ -103,6 +105,7 @@ export default function WikiPage({
         {description || fallbackDescription ? (
           <meta name="description" content={description || fallbackDescription} />
         ) : null}
+        <link rel="icon" href={faviconPath} />
       </Head>
       <WikiLayout
         currentPath={currentPath}

@@ -2,6 +2,14 @@
   "siteName": "MiniWiki",
   "siteDescription": "Official MiniWiki template documentation.",
   "titleSuffix": "MiniWiki Docs",
+  "faviconPath": "/favicon.png",
+  "branding": {
+    "display": "logo-and-text",
+    "logoPath": "/favicon.png",
+    "logoAlt": "MiniWiki logo",
+    "text": "MiniWiki",
+    "logoClassName": "h-7 w-auto"
+  },
   "wikiPreset": "portal",
   "header": {
     "showSearch": true,
