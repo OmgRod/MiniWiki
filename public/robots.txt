@@ -1,4 +1,1 @@
-User-agent: *
-Allow: /
-
 Sitemap: https://miniwiki.omgrod.me/sitemap.xml
