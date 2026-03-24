@@ -13,6 +13,7 @@ File: `content/templates.json`
 - Set fallback template with `defaultTemplate`
 - Change default metadata under `defaults.*`
 - Rename or adjust template entries under `registry.*`
+- Pick visual style templates like `aura`, `forest`, and `midnight`
 
 ## Top-level keys
 
@@ -63,13 +64,16 @@ File: `content/templates.json`
 | `registry.reference` | `object` | Yes | Reference template metadata. |
 | `registry.reference.name` | `string` | Yes | Human-readable template name. |
 | `registry.reference.description` | `string` | Yes | Template description. |
+| `registry.aura` | `object` | Yes | Cozy faint magenta/pink dark-mode style template metadata. |
+| `registry.forest` | `object` | Yes | Emerald-tinted style template metadata. |
+| `registry.midnight` | `object` | Yes | Indigo-tinted style template metadata. |
 
 ## Frontmatter usage
 
 ```mdx
 ---
 title: My Page
-template: guide
+template: aura
 ---
 ```
 
