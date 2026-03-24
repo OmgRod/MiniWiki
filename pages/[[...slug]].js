@@ -10,6 +10,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import WikiLayout from '../layouts/WikiLayout';
 import mdxComponents from '../components/mdx-components';
 import { mergeTemplateConfig, resolveTemplate } from '../templates';
+import Icon from '../components/Icon'
 
 const {
   CONTENT_DIR,
@@ -121,9 +122,10 @@ export default function WikiPage({
                 href={editPage.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
               >
-                {editPage.text || 'Edit this page'}
+                <Icon name="pencil" />
+                <span>{editPage.text || 'Edit this page'}</span>
               </a>
             </div>
           ) : null}
