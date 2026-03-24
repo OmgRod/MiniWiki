@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 html,
 body,
@@ -30,6 +28,14 @@ a:not(.miniwiki-button) {
 
 .prose :where(h1,h2,h3,h4,h5,h6):hover a.miniwiki-heading-anchor {
   @apply opacity-60;
+}
+
+.miniwiki-callout > :where(p) {
+  margin: 0;
+}
+
+.miniwiki-callout > :where(p + p) {
+  margin-top: 0.75rem;
 }
 
 .mdx-content h1,

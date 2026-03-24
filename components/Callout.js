@@ -27,10 +27,10 @@ export default function Callout({ icon = 'idea', variant = 'default', children }
 
   return (
     <div className={`miniwiki-callout my-4 flex items-start gap-3 rounded-lg border px-4 py-3 shadow-sm ${colorClass}`}>
-      <span className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center leading-none ${iconColorClass}`}>
+      <span className={`mt-3 inline-flex h-5 w-5 shrink-0 items-center justify-center leading-none ${iconColorClass}`}>
         <Icon name={icon} size={18} />
       </span>
-      <div className="min-w-0 text-sm leading-6 [&>p:first-child]:mt-0 [&>p:last-child]:mb-0">{children}</div>
+      <div className="min-w-0 text-sm leading-6 [&_p]:m-0">{children}</div>
     </div>
   );
 }
