@@ -272,8 +272,8 @@ export async function getStaticProps({ params }) {
   const source = fs.readFileSync(filePath, 'utf8');
   const { content, data } = matter(source);
   const relativePath = toPosixPath(path.relative(CONTENT_DIR, filePath));
-  const siteConfig = getSiteConfig();
-  const templatesConfig = getTemplatesConfig();
+  const siteConfig = getSiteConfig(relativePath);
+  const templatesConfig = getTemplatesConfig(relativePath);
   const pageTemplatesEnabled = siteConfig?.pageTemplates?.enabled !== false;
   const siteDefaultTemplate =
     siteConfig?.defaultTemplate ||
@@ -309,7 +309,7 @@ export async function getStaticProps({ params }) {
   });
 
   const currentPath = slug.length ? `/${slug.join('/')}` : '/';
-  const sidebarConfig = getSidebarConfig();
+  const sidebarConfig = getSidebarConfig(relativePath);
   const editPageUrl = buildEditPageUrl({
     siteConfig,
     relativePath,
@@ -328,8 +328,8 @@ export async function getStaticProps({ params }) {
       description: data.description || '',
       currentPath,
       sidebarConfig,
-      headerConfig: getHeaderConfig(),
-      footerConfig: getFooterConfig(),
+      headerConfig: getHeaderConfig(relativePath),
+      footerConfig: getFooterConfig(relativePath),
       searchDocuments: getPageMetaIndex(),
       siteConfig,
       template: templateKey,
