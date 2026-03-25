@@ -1,0 +1,40 @@
+---
+title: DonutChart
+description: Segmented donut chart with optional legend.
+---
+
+# DonutChart
+
+Renders a donut chart using SVG stroke segments and an optional legend.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `{ label: string, value: number, colorClass?: string }[]` | Yes | Segment data and optional Tailwind text color class. |
+| `size` | `number` | No | SVG width/height. Default: `180`. |
+| `strokeWidth` | `number` | No | Donut thickness. Default: `22`. |
+| `showLegend` | `boolean` | No | Shows legend next to chart. Default: `true`. |
+| `className` | `string` | No | Optional wrapper class names. |
+
+## Live example
+
+<DonutChart
+  data={[
+    { label: 'Published', value: 64 },
+    { label: 'Draft', value: 21 },
+    { label: 'Archived', value: 15 },
+  ]}
+/>
+
+## Code
+
+```mdx
+<DonutChart
+  data={[
+    { label: 'Published', value: 64 },
+    { label: 'Draft', value: 21 },
+    { label: 'Archived', value: 15 },
+  ]}
+/>
+```

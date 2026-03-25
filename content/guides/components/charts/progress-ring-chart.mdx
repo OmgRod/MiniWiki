@@ -1,0 +1,26 @@
+---
+title: ProgressRingChart
+description: Circular progress/radial KPI chart.
+---
+
+# ProgressRingChart
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `value` | `number` | Yes | Progress percent (0-100). |
+| `size` | `number` | No | Ring size. Default: `180`. |
+| `strokeWidth` | `number` | No | Ring thickness. Default: `14`. |
+| `label` | `string` | No | Text label below ring. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<ProgressRingChart value={78} label="Documentation Coverage" />
+
+## Code
+
+```mdx
+<ProgressRingChart value={78} label="Documentation Coverage" />
+```

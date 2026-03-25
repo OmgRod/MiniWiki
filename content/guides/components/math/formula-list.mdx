@@ -1,0 +1,37 @@
+---
+title: FormulaList
+description: Structured formula catalog with names and rendered expressions.
+---
+
+# FormulaList
+
+Renders a clean two-column formula reference table for educational and technical pages.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `items` | `{ name: string, expression: string }[]` | Yes | Formula name and LaTeX expression pairs. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<FormulaList
+  items={[
+    { name: 'Pythagorean', expression: 'a^2 + b^2 = c^2' },
+    { name: 'Newton 2nd Law', expression: 'F = ma' },
+    { name: 'Binomial', expression: '(a+b)^2 = a^2 + 2ab + b^2' },
+  ]}
+/>
+
+## Code
+
+```mdx
+<FormulaList
+  items={[
+    { name: 'Pythagorean', expression: 'a^2 + b^2 = c^2' },
+    { name: 'Newton 2nd Law', expression: 'F = ma' },
+    { name: 'Binomial', expression: '(a+b)^2 = a^2 + 2ab + b^2' },
+  ]}
+/>
+```

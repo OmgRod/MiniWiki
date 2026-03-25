@@ -1,0 +1,40 @@
+---
+title: Poll
+description: Lightweight vote-and-visualize poll component.
+---
+
+# Poll
+
+Use this component for lightweight opinion blocks, release preference votes, and quick audience checks.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `question` | `string` | Yes | Poll question text. |
+| `options` | `{ label: string, votes?: number }[]` | Yes | Poll answer options. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<Poll
+  question="Which release note format do you prefer?"
+  options={[
+    { label: 'Short bullets', votes: 10 },
+    { label: 'Detailed narrative', votes: 6 },
+    { label: 'Hybrid', votes: 12 },
+  ]}
+/>
+
+## Code
+
+```mdx
+<Poll
+  question="Which release note format do you prefer?"
+  options={[
+    { label: 'Short bullets', votes: 10 },
+    { label: 'Detailed narrative', votes: 6 },
+    { label: 'Hybrid', votes: 12 },
+  ]}
+/>
+```

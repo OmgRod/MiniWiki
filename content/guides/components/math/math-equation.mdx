@@ -1,0 +1,25 @@
+---
+title: MathEquation
+description: Render inline or block LaTeX expressions with KaTeX.
+---
+
+# MathEquation
+
+Renders LaTeX expressions through KaTeX for technical docs, tutorials, and science posts.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `expression` | `string` | Yes | LaTeX expression to render. |
+| `block` | `boolean` | No | Block mode when true, inline mode when false. Default: `true`. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live examples
+
+<MathEquation expression="\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)" />
+
+<p>
+  Inline usage:&nbsp;
+  <MathEquation expression="\\sigma = \\sqrt{\\frac{1}{N}\\sum_{i=1}^{N}(x_i - \\mu)^2}" block={false} />
+</p>

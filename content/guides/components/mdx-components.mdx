@@ -12,6 +12,7 @@ This registry maps imported React components to MDX tags.
 ## Responsibilities
 
 - Exposes components like `Alert`, `Card`, `Infobox`, and `WikiTable` primitives.
+- Exposes components like `Alert`, `Card`, `Infobox`, `BarChart`, `MathEquation`, `PeriodicTable`, `Quiz`, `Poll`, and `Flashcards`.
 - Overrides markdown element renderers (`pre`, `table`, `thead`, `tbody`, `tr`, `th`, `td`, `caption`).
 - Defines what can be used directly inside `.mdx` content.
 
@@ -37,3 +38,8 @@ The examples below are rendered through the registry:
 | `pre` | Uses `CodeBlock` |
 | `table` | Uses `WikiTable.Table` |
 | `th` / `td` | Uses `WikiTable.TH` / `WikiTable.TD` |
+| `BarChart` / `SparklineChart` / `DonutChart` / `AreaChart` / `StackedBarChart` | Uses chart components from `components/charts/` |
+| `HeatmapChart` / `ProgressRingChart` | Additional chart components from `components/charts/` |
+| `MathEquation` / `FormulaList` / `MathSteps` / `UnitConverter` | Uses math components from `components/math/` |
+| `PeriodicTable` / `ElementCard` / `CompoundBreakdown` | Uses science components from `components/science/` |
+| `Quiz` / `Poll` / `Flashcards` | Uses interactive components from `components/interactive/` |

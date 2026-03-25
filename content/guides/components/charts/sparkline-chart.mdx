@@ -1,0 +1,28 @@
+---
+title: SparklineChart
+description: Inline trend line chart rendered in SVG.
+---
+
+# SparklineChart
+
+Renders a compact SVG sparkline for trend visualization in docs and status sections.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `number[] \| { value: number }[]` | Yes | Ordered trend values. |
+| `width` | `number` | No | Internal SVG width. Default: `560`. |
+| `height` | `number` | No | Internal SVG height. Default: `120`. |
+| `strokeWidth` | `number` | No | Line thickness. Default: `3`. |
+| `className` | `string` | No | Optional wrapper class names. |
+
+## Live example
+
+<SparklineChart data={[72, 75, 71, 80, 82, 84, 83, 89, 94, 92]} />
+
+## Code
+
+```mdx
+<SparklineChart data={[72, 75, 71, 80, 82, 84, 83, 89, 94, 92]} />
+```

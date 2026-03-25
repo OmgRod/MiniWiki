@@ -1,0 +1,35 @@
+---
+title: Interactive Index
+description: Interactive components for engagement-focused pages and blogs.
+---
+
+# Interactive Index
+
+Interactive components are grouped under `components/interactive/`.
+
+## Available components
+
+- [Quiz](/guides/components/interactive/quiz)
+- [Poll](/guides/components/interactive/poll)
+- [Flashcards](/guides/components/interactive/flashcards)
+
+## Quick preview
+
+<Quiz
+  questions={[
+    {
+      prompt: 'Which format does MiniWiki use for content pages?',
+      options: ['RST', 'MDX', 'YAML'],
+      correctIndex: 1,
+      explanation: 'MiniWiki renders docs from MDX files in the content tree.',
+    },
+  ]}
+/>
+
+<Poll
+  question="Should docs include interactive elements by default?"
+  options={[
+    { label: 'Yes', votes: 18 },
+    { label: 'No', votes: 4 },
+  ]}
+/>

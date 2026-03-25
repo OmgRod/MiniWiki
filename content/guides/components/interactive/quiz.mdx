@@ -1,0 +1,73 @@
+---
+title: Quiz
+description: Multiple-choice quiz component for learning and blog interactivity.
+---
+
+# Quiz
+
+Renders mixed quiz formats with score calculation and optional explanations.
+
+## Authoring tips
+
+- Mix `mcq`, `input`, and `matching` to keep long quizzes engaging.
+- For `input` questions, add alternative answers via `answers`.
+- For `matching`, provide `pairs` and optionally a custom `options` list.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `questions` | `Question[]` | Yes | Quiz question definitions (`mcq`, `input`, `matching`). |
+| `showScore` | `boolean` | No | Show score after submit. Default: `true`. |
+| `className` | `string` | No | Wrapper classes. |
+
+Question shapes:
+
+- `mcq`: `{ type: 'mcq', prompt, options, correctIndex, explanation? }`
+- `input`: `{ type: 'input', prompt, answer, answers?, caseSensitive?, explanation? }`
+- `matching`: `{ type: 'matching', prompt, pairs: { left, right }[], options?, explanation? }`
+
+## Live example
+
+<Quiz
+  questions={[
+    {
+      type: 'mcq',
+      prompt: 'What does SSG stand for in Next.js?',
+      options: ['Server-Side Grouping', 'Static Site Generation', 'Source Style Grid'],
+      correctIndex: 1,
+      explanation: 'Static Site Generation pre-renders pages at build time.',
+    },
+    {
+      type: 'mcq',
+      prompt: 'Which planet is known as the Red Planet?',
+      options: ['Venus', 'Mars', 'Jupiter'],
+      correctIndex: 1,
+      explanation: 'Mars appears red due to iron oxide on its surface.',
+    },
+    {
+      type: 'input',
+      prompt: 'What is the chemical symbol for water?',
+      answer: 'H2O',
+      answers: ['h2o'],
+      explanation: 'Water is made of two hydrogen atoms and one oxygen atom.',
+    },
+    {
+      type: 'input',
+      prompt: 'How many continents are there on Earth?',
+      answer: '7',
+      answers: ['seven'],
+      explanation: 'The widely accepted count is seven continents.',
+    },
+    {
+      type: 'matching',
+      prompt: 'Match each inventor to their invention.',
+      pairs: [
+        { left: 'Alexander Graham Bell', right: 'Telephone' },
+        { left: 'Thomas Edison', right: 'Practical light bulb' },
+        { left: 'Tim Berners-Lee', right: 'World Wide Web' },
+      ],
+      explanation: 'These pairings are common general-knowledge references.',
+    },
+  ]}
+/>

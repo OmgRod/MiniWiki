@@ -1,0 +1,49 @@
+---
+title: StackedBarChart
+description: Compare grouped totals and composition with stacked segments.
+---
+
+# StackedBarChart
+
+Renders horizontal stacked bars for category composition comparisons.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `{ label: string, values: Record<string, number> }[]` | Yes | Grouped rows and keyed values. |
+| `series` | `{ key: string, label?: string, colorClass?: string }[]` | Yes | Segment definitions and ordering. |
+| `showLegend` | `boolean` | No | Shows the legend. Default: `true`. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<StackedBarChart
+  series={[
+    { key: 'new', label: 'New' },
+    { key: 'updated', label: 'Updated' },
+    { key: 'archived', label: 'Archived' },
+  ]}
+  data={[
+    { label: 'Docs', values: { new: 14, updated: 6, archived: 2 } },
+    { label: 'Blog', values: { new: 9, updated: 11, archived: 4 } },
+    { label: 'API', values: { new: 5, updated: 13, archived: 3 } },
+  ]}
+/>
+
+## Code
+
+```mdx
+<StackedBarChart
+  series={[
+    { key: 'new', label: 'New' },
+    { key: 'updated', label: 'Updated' },
+    { key: 'archived', label: 'Archived' },
+  ]}
+  data={[
+    { label: 'Docs', values: { new: 14, updated: 6, archived: 2 } },
+    { label: 'Blog', values: { new: 9, updated: 11, archived: 4 } },
+    { label: 'API', values: { new: 5, updated: 13, archived: 3 } },
+  ]}
+/>
+```

@@ -1,0 +1,29 @@
+---
+title: ElementCard
+description: Card-style scientific element display for chemistry content.
+---
+
+# ElementCard
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `symbol` | `string` | Yes | Element symbol. |
+| `name` | `string` | Yes | Element name. |
+| `number` | `number` | Yes | Atomic number. |
+| `group` | `string` | No | Category/group label. |
+| `atomicMass` | `string \| number` | No | Atomic mass value. |
+| `summary` | `string` | No | Supporting description text. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<ElementCard
+  symbol="Fe"
+  name="Iron"
+  number={26}
+  group="Transition Metal"
+  atomicMass="55.845"
+  summary="Critical for hemoglobin and many industrial alloys."
+/>

@@ -1,0 +1,38 @@
+---
+title: CompoundBreakdown
+description: Visual composition panel for molecules and compounds.
+---
+
+# CompoundBreakdown
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `formula` | `string` | Yes | Compound formula label. |
+| `parts` | `{ symbol: string, name: string, count: number, ram?: number }[]` | Yes | Breakdown entries with optional RAM values used for RFM calculation. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<CompoundBreakdown
+  formula="C6H12O6"
+  parts={[
+    { symbol: 'C', name: 'Carbon', count: 6, ram: 12.011 },
+    { symbol: 'H', name: 'Hydrogen', count: 12, ram: 1.008 },
+    { symbol: 'O', name: 'Oxygen', count: 6, ram: 15.999 },
+  ]}
+/>
+
+## Code
+
+```mdx
+<CompoundBreakdown
+  formula="C6H12O6"
+  parts={[
+    { symbol: 'C', name: 'Carbon', count: 6, ram: 12.011 },
+    { symbol: 'H', name: 'Hydrogen', count: 12, ram: 1.008 },
+    { symbol: 'O', name: 'Oxygen', count: 6, ram: 15.999 },
+  ]}
+/>
+```

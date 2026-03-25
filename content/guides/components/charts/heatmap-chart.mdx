@@ -1,0 +1,41 @@
+---
+title: HeatmapChart
+description: Matrix-based heatmap for intensity comparisons across dimensions.
+---
+
+# HeatmapChart
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `number[][]` | Yes | Heat intensity grid. |
+| `xLabels` | `string[]` | No | Column labels. |
+| `yLabels` | `string[]` | No | Row labels. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<HeatmapChart
+  xLabels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri']}
+  yLabels={['API', 'Docs', 'Blog']}
+  data={[
+    [2, 4, 6, 5, 3],
+    [1, 3, 5, 7, 4],
+    [0, 2, 3, 5, 8],
+  ]}
+/>
+
+## Code
+
+```mdx
+<HeatmapChart
+  xLabels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri']}
+  yLabels={['API', 'Docs', 'Blog']}
+  data={[
+    [2, 4, 6, 5, 3],
+    [1, 3, 5, 7, 4],
+    [0, 2, 3, 5, 8],
+  ]}
+/>
+```

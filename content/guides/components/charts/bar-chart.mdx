@@ -1,0 +1,41 @@
+---
+title: BarChart
+description: Lightweight vertical bar chart rendered with divs.
+---
+
+# BarChart
+
+Renders a simple vertical bar chart suitable for docs dashboards and release snapshots.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `{ label: string, value: number }[]` | Yes | Data points to render. |
+| `height` | `number` | No | Chart canvas height in pixels. Default: `180`. |
+| `showValues` | `boolean` | No | Shows numeric values under labels. Default: `true`. |
+| `className` | `string` | No | Optional wrapper class names. |
+
+## Live example
+
+<BarChart
+  data={[
+    { label: 'Q1', value: 22 },
+    { label: 'Q2', value: 28 },
+    { label: 'Q3', value: 19 },
+    { label: 'Q4', value: 31 },
+  ]}
+/>
+
+## Code
+
+```mdx
+<BarChart
+  data={[
+    { label: 'Q1', value: 22 },
+    { label: 'Q2', value: 28 },
+    { label: 'Q3', value: 19 },
+    { label: 'Q4', value: 31 },
+  ]}
+/>
+```

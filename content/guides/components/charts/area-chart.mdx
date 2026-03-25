@@ -1,0 +1,44 @@
+---
+title: AreaChart
+description: Smooth area chart for trend-heavy visual storytelling.
+---
+
+# AreaChart
+
+Renders an SVG area + line chart ideal for trend narratives in docs and dashboards.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `{ label: string, value: number }[]` | Yes | Ordered chart points. |
+| `width` | `number` | No | SVG width. Default: `640`. |
+| `height` | `number` | No | SVG height. Default: `220`. |
+| `showDots` | `boolean` | No | Show/hide point markers. Default: `true`. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<AreaChart
+  data={[
+    { label: 'Week 1', value: 42 },
+    { label: 'Week 2', value: 51 },
+    { label: 'Week 3', value: 48 },
+    { label: 'Week 4', value: 59 },
+    { label: 'Week 5', value: 63 },
+  ]}
+/>
+
+## Code
+
+```mdx
+<AreaChart
+  data={[
+    { label: 'Week 1', value: 42 },
+    { label: 'Week 2', value: 51 },
+    { label: 'Week 3', value: 48 },
+    { label: 'Week 4', value: 59 },
+    { label: 'Week 5', value: 63 },
+  ]}
+/>
+```

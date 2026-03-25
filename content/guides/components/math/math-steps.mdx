@@ -1,0 +1,35 @@
+---
+title: MathSteps
+description: Step-by-step derivation component with KaTeX-rendered equations.
+---
+
+# MathSteps
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `steps` | `{ label?: string, expression: string }[]` | Yes | Ordered derivation steps. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<MathSteps
+  steps={[
+    { label: 'Start from the quadratic equation', expression: 'ax^2 + bx + c = 0' },
+    { label: 'Normalize by a', expression: 'x^2 + \\frac{b}{a}x + \\frac{c}{a} = 0' },
+    { label: 'Solve for x', expression: 'x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}' },
+  ]}
+/>
+
+## Code
+
+```mdx
+<MathSteps
+  steps={[
+    { label: 'Start from the quadratic equation', expression: 'ax^2 + bx + c = 0' },
+    { label: 'Normalize by a', expression: 'x^2 + \\frac{b}{a}x + \\frac{c}{a} = 0' },
+    { label: 'Solve for x', expression: 'x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}' },
+  ]}
+/>
+```

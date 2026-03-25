@@ -1,0 +1,37 @@
+---
+title: Flashcards
+description: Interactive flashcard study component.
+---
+
+# Flashcards
+
+Best for glossary pages, interview prep notes, language vocab drills, and bite-size learning posts.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `cards` | `{ front: string, back: string }[]` | Yes | Flashcard items. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<Flashcards
+  cards={[
+    { front: 'SSG', back: 'Static Site Generation' },
+    { front: 'CSR', back: 'Client-Side Rendering' },
+    { front: 'ISR', back: 'Incremental Static Regeneration' },
+  ]}
+/>
+
+## Code
+
+```mdx
+<Flashcards
+  cards={[
+    { front: 'SSG', back: 'Static Site Generation' },
+    { front: 'CSR', back: 'Client-Side Rendering' },
+    { front: 'ISR', back: 'Incremental Static Regeneration' },
+  ]}
+/>
+```

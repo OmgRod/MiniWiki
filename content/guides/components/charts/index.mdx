@@ -1,0 +1,64 @@
+---
+title: Charts Index
+description: Data-visualization components grouped under components/charts.
+---
+
+# Charts Index
+
+Chart-related components are grouped under `components/charts/` instead of the base root component set.
+
+## When to use which chart
+
+- Use `BarChart` or `StackedBarChart` for category comparisons.
+- Use `SparklineChart` or `AreaChart` for trends over time.
+- Use `DonutChart` and `ProgressRingChart` for composition/KPI snapshots.
+- Use `HeatmapChart` for matrix-style intensity views.
+
+## Data notes
+
+- All chart components accept direct `data` arrays from MDX.
+- Components include safe fallback demo data when empty so docs previews stay visible.
+
+## Available components
+
+- [BarChart](/guides/components/charts/bar-chart)
+- [SparklineChart](/guides/components/charts/sparkline-chart)
+- [DonutChart](/guides/components/charts/donut-chart)
+- [AreaChart](/guides/components/charts/area-chart)
+- [StackedBarChart](/guides/components/charts/stacked-bar-chart)
+- [HeatmapChart](/guides/components/charts/heatmap-chart)
+- [ProgressRingChart](/guides/components/charts/progress-ring-chart)
+
+## Quick preview
+
+<BarChart
+  data={[
+    { label: 'Mon', value: 14 },
+    { label: 'Tue', value: 19 },
+    { label: 'Wed', value: 12 },
+    { label: 'Thu', value: 24 },
+    { label: 'Fri', value: 17 },
+  ]}
+/>
+
+<SparklineChart data={[8, 11, 10, 15, 18, 16, 20, 23, 21]} />
+
+<DonutChart
+  data={[
+    { label: 'Docs', value: 58 },
+    { label: 'API', value: 24 },
+    { label: 'Ops', value: 18 },
+  ]}
+/>
+
+<AreaChart
+  data={[
+    { label: 'Jan', value: 12 },
+    { label: 'Feb', value: 16 },
+    { label: 'Mar', value: 14 },
+    { label: 'Apr', value: 22 },
+    { label: 'May', value: 19 },
+  ]}
+/>
+
+<ProgressRingChart value={84} label="Quarterly Goal" />

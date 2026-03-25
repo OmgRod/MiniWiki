@@ -1,0 +1,42 @@
+---
+title: Math Index
+description: Math-focused components powered by KaTeX and reusable formula UIs.
+---
+
+# Math Index
+
+Math components are grouped under `components/math/`.
+
+## Practical guidance
+
+- Use `MathEquation` for single formulas.
+- Use `FormulaList` for reference-style pages.
+- Use `MathSteps` for derivations and tutorials.
+- Use `UnitConverter` for interactive STEM explainers.
+
+## Available components
+
+- [MathEquation](/guides/components/math/math-equation)
+- [FormulaList](/guides/components/math/formula-list)
+- [MathSteps](/guides/components/math/math-steps)
+- [UnitConverter](/guides/components/math/unit-converter)
+
+## Quick preview
+
+<MathEquation expression="E = mc^2" />
+
+<FormulaList
+  items={[
+    { name: 'Quadratic', expression: 'x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}' },
+    { name: 'Euler', expression: 'e^{i\\pi} + 1 = 0' },
+  ]}
+/>
+
+<MathSteps
+  steps={[
+    { label: 'Start', expression: 'E = mc^2' },
+    { label: 'Solve for m', expression: 'm = \\frac{E}{c^2}' },
+  ]}
+/>
+
+<UnitConverter />

@@ -1,0 +1,30 @@
+---
+title: PeriodicTable
+description: Compact periodic-table component for science and STEM content.
+---
+
+# PeriodicTable
+
+Renders the full periodic table (all 118 elements) with category color coding, highlight support, and adaptive square cell sizing.
+
+## Readability behavior
+
+- Cells stay perfect squares and scale by dataset size.
+- Full-table mode prioritizes symbol/number/mass; names are auto-hidden for density.
+- Subset mode can show full element names for classroom-style focused views.
+- Includes a top-center labeled key with guide lines for number/symbol/name/mass.
+
+## Data interpretation note
+
+- When atomic mass is not explicitly provided in the dataset entry, the cell shows a bracketed atomic number placeholder (e.g., `[57]`) to avoid showing incorrect mass values.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `showNames` | `'auto' \| boolean` | No | Name visibility. `auto` shows names for smaller subsets and hides for dense full-table layouts. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<PeriodicTable />
