@@ -5,38 +5,43 @@ description: Tabbed content UI for grouped alternatives.
 
 # Tabs
 
-`Tabs` exports `TabPanels` for rendering tab groups.
+`TabPanels` renders a tab group. Each `Tab` child represents one tab, with its `title` displayed as the tab button label. Tab content can be any HTML or Markdown.
 
-## Props (`TabPanels`)
+## Props
+
+### `TabPanels`
 
 | Prop | Type | Required | Description |
 | --- | --- | --- | --- |
-| `tabs` | `Array<{ id: string, label: string, content: ReactNode }>` | Yes | Tab definitions. |
+| `children` | `Tab` elements | Yes | One or more `Tab` components. |
+
+### `Tab`
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | Yes | Label shown on the tab button. |
+| `children` | `ReactNode` | Yes | Content rendered when the tab is active. |
 
 ## Live examples
 
-<TabPanels
-  tabs={[
-    { id: 'js', label: 'JavaScript', content: 'npm run dev' },
-    { id: 'pnpm', label: 'pnpm', content: 'pnpm dev' },
-    { id: 'bun', label: 'bun', content: 'bun run dev' },
-  ]}
-/>
+<TabPanels>
+  <Tab title="JavaScript">npm run dev</Tab>
+  <Tab title="pnpm">pnpm dev</Tab>
+  <Tab title="Bun">bun run dev</Tab>
+</TabPanels>
 
-<TabPanels
-  tabs={[
-    { id: 'docs', label: 'Docs', content: 'Markdown + MDX content pages.' },
-    { id: 'config', label: 'Config', content: 'JSON files for navigation and layout behavior.' },
-  ]}
-/>
+<TabPanels>
+  <Tab title="Docs">Markdown + MDX content pages.</Tab>
+  <Tab title="Config">JSON files for navigation and layout behavior.</Tab>
+</TabPanels>
 
 ## Code
 
 ```mdx
-<TabPanels
-  tabs={[
-    { id: 'js', label: 'JavaScript', content: 'npm run dev' },
-    { id: 'pnpm', label: 'pnpm', content: 'pnpm dev' },
-  ]}
-/>
+<TabPanels>
+  <Tab title="JavaScript">npm run dev</Tab>
+  <Tab title="pnpm">pnpm dev</Tab>
+  <Tab title="Bun">bun run dev</Tab>
+</TabPanels>
 ```
+
