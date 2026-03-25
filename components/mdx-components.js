@@ -20,7 +20,7 @@ import PresetSearch from './PresetSearch';
 import SearchBar from './SearchBar';
 import Sidebar from './Sidebar';
 import Steps from './Steps';
-import Tabs, { TabPanels } from './Tabs';
+import Tabs, { Tab, TabPanels } from './Tabs';
 import Table, { Caption, TBody, TD, TH, THead, TR } from './WikiTable';
 
 const mdxComponents = {
@@ -54,6 +54,7 @@ const mdxComponents = {
   THead,
   TR,
   Tabs,
+  Tab,
   TabPanels,
   caption: (props) => <Caption {...props} />,
   pre: (props) => <CodeBlock {...props} />,
