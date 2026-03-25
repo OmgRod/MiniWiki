@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Icon from './Icon';
 
 const STORAGE_KEY = 'miniwiki-theme';
 
@@ -35,10 +36,26 @@ export default function DarkModeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="rounded-md border border-slate-300 px-2 py-1 text-xs text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-600 transition-colors duration-300 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 dark:text-slate-300 dark:hover:text-blue-300"
       aria-label="Toggle color mode"
+      title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {theme === 'dark' ? 'Light' : 'Dark'}
+      <span className="relative h-5 w-5">
+        <Icon
+          name="sun"
+          size={18}
+          className={`absolute inset-0 transition-all duration-300 ease-out ${
+            theme === 'dark' ? 'scale-0 rotate-90 opacity-0' : 'scale-100 rotate-0 opacity-100'
+          }`}
+        />
+        <Icon
+          name="moon"
+          size={18}
+          className={`absolute inset-0 transition-all duration-300 ease-out ${
+            theme === 'dark' ? 'scale-100 rotate-0 opacity-100' : 'scale-0 -rotate-90 opacity-0'
+          }`}
+        />
+      </span>
     </button>
   );
 }

@@ -52,31 +52,52 @@ function normalizeRoutePath(routePath = '/') {
   return normalized === '/' ? '/' : normalized.replace(/\/+$/, '');
 }
 
+function getNestedSidebarItems(item) {
+  if (Array.isArray(item?.items)) {
+    return item.items;
+  }
+
+  if (Array.isArray(item?.children)) {
+    return item.children;
+  }
+
+  return [];
+}
+
+function appendOrderedSidebarItems(items, pages, seen) {
+  for (const item of items || []) {
+    const nestedItems = getNestedSidebarItems(item);
+
+    if (nestedItems.length > 0) {
+      appendOrderedSidebarItems(nestedItems, pages, seen);
+      continue;
+    }
+
+    if (!item?.path) {
+      continue;
+    }
+
+    const routePath = normalizeRoutePath(item.path);
+
+    if (seen.has(routePath)) {
+      continue;
+    }
+
+    seen.add(routePath);
+    pages.push({
+      title: item.title || routePath,
+      path: routePath,
+    });
+  }
+}
+
 function getOrderedSidebarPages(sidebarConfig) {
   const sections = sidebarConfig?.sections || [];
   const pages = [];
   const seen = new Set();
 
   for (const section of sections) {
-    const items = section?.items || [];
-
-    for (const item of items) {
-      if (!item?.path) {
-        continue;
-      }
-
-      const routePath = normalizeRoutePath(item.path);
-
-      if (seen.has(routePath)) {
-        continue;
-      }
-
-      seen.add(routePath);
-      pages.push({
-        title: item.title || routePath,
-        path: routePath,
-      });
-    }
+    appendOrderedSidebarItems(section?.items || [], pages, seen);
   }
 
   return pages;

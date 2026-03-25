@@ -11,6 +11,7 @@ File: `content/sidebar.json`
 
 - Add a new sidebar section
 - Add links under an existing section
+- Add nested subcategories under a section
 - Reorder sections and links
 - Toggle section collapse behavior
 
@@ -33,12 +34,17 @@ File: `content/sidebar.json`
 | Key path | Type | Required | Description |
 | --- | --- | --- | --- |
 | `sections[].items[].title` | `string` | Yes | Navigation label for page. |
-| `sections[].items[].path` | `string` | Yes | URL/path target for that item. |
+| `sections[].items[].path` | `string` | Conditionally | URL/path target for that leaf item. Required when `items`/`children` is not present. |
+| `sections[].items[].collapsible` | `boolean` | No | Whether this nested group can be collapsed (group items only). |
+| `sections[].items[].defaultOpen` | `boolean` | No | Forces nested group open by default on first render. |
+| `sections[].items[].items` | `array` | Conditionally | Nested subcategory list (group items only). |
+| `sections[].items[].children` | `array` | Conditionally | Alias for `items` for nested subcategory list. |
 
 ## Notes
 
 - Order of `sections` controls sidebar section order.
 - Order of `items` controls link order within each section.
+- Nested groups auto-open when they contain the current page.
 
 ## Add a new section (copy-ready)
 
@@ -49,6 +55,27 @@ File: `content/sidebar.json`
 	"items": [
 		{ "title": "Overview", "path": "/guides/my-section/overview" },
 		{ "title": "Reference", "path": "/guides/my-section/reference" }
+	]
+}
+```
+
+## Nested subcategories (copy-ready)
+
+```json
+{
+	"title": "Components",
+	"collapsible": true,
+	"items": [
+		{ "title": "Components Index", "path": "/guides/components/index" },
+		{
+			"title": "Layout",
+			"collapsible": true,
+			"items": [
+				{ "title": "Header", "path": "/guides/components/header" },
+				{ "title": "Sidebar", "path": "/guides/components/sidebar" },
+				{ "title": "Footer", "path": "/guides/components/footer" }
+			]
+		}
 	]
 }
 ```

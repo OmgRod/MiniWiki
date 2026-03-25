@@ -34,31 +34,49 @@
       "collapsible": true,
       "items": [
         { "title": "Components Index", "path": "/guides/components/index" },
-        { "title": "Accordion", "path": "/guides/components/accordion" },
-        { "title": "Alert", "path": "/guides/components/alert" },
-        { "title": "Badge", "path": "/guides/components/badge" },
-        { "title": "ButtonLink", "path": "/guides/components/button-link" },
-        { "title": "Callout", "path": "/guides/components/callout" },
-        { "title": "Card", "path": "/guides/components/card" },
-        { "title": "CardGrid", "path": "/guides/components/card-grid" },
-        { "title": "CodeBlock", "path": "/guides/components/code-block" },
-        { "title": "DarkModeToggle", "path": "/guides/components/dark-mode-toggle" },
-        { "title": "DefinitionList", "path": "/guides/components/definition-list" },
-        { "title": "Divider", "path": "/guides/components/divider" },
-        { "title": "FeatureList", "path": "/guides/components/feature-list" },
-        { "title": "Figure", "path": "/guides/components/figure" },
-        { "title": "Footer", "path": "/guides/components/footer" },
-        { "title": "Header", "path": "/guides/components/header" },
-        { "title": "Icon", "path": "/guides/components/icon" },
-        { "title": "Infobox", "path": "/guides/components/infobox" },
-        { "title": "Kbd", "path": "/guides/components/kbd" },
-        { "title": "PresetSearch", "path": "/guides/components/preset-search" },
-        { "title": "mdx-components", "path": "/guides/components/mdx-components" },
-        { "title": "SearchBar", "path": "/guides/components/search-bar" },
-        { "title": "Sidebar", "path": "/guides/components/sidebar" },
-        { "title": "Steps", "path": "/guides/components/steps" },
-        { "title": "Tabs", "path": "/guides/components/tabs" },
-        { "title": "WikiTable", "path": "/guides/components/wiki-table" },
+        {
+          "title": "Layout & Navigation",
+          "collapsible": true,
+          "items": [
+            { "title": "Header", "path": "/guides/components/header" },
+            { "title": "Sidebar", "path": "/guides/components/sidebar" },
+            { "title": "Footer", "path": "/guides/components/footer" },
+            { "title": "Tabs", "path": "/guides/components/tabs" },
+            { "title": "Steps", "path": "/guides/components/steps" }
+          ]
+        },
+        {
+          "title": "Content Blocks",
+          "collapsible": true,
+          "items": [
+            { "title": "Accordion", "path": "/guides/components/accordion" },
+            { "title": "Alert", "path": "/guides/components/alert" },
+            { "title": "Callout", "path": "/guides/components/callout" },
+            { "title": "Card", "path": "/guides/components/card" },
+            { "title": "CardGrid", "path": "/guides/components/card-grid" },
+            { "title": "CodeBlock", "path": "/guides/components/code-block" },
+            { "title": "DefinitionList", "path": "/guides/components/definition-list" },
+            { "title": "Divider", "path": "/guides/components/divider" },
+            { "title": "FeatureList", "path": "/guides/components/feature-list" },
+            { "title": "Figure", "path": "/guides/components/figure" },
+            { "title": "Infobox", "path": "/guides/components/infobox" },
+            { "title": "WikiTable", "path": "/guides/components/wiki-table" }
+          ]
+        },
+        {
+          "title": "UI & Utilities",
+          "collapsible": true,
+          "items": [
+            { "title": "Badge", "path": "/guides/components/badge" },
+            { "title": "ButtonLink", "path": "/guides/components/button-link" },
+            { "title": "DarkModeToggle", "path": "/guides/components/dark-mode-toggle" },
+            { "title": "Icon", "path": "/guides/components/icon" },
+            { "title": "Kbd", "path": "/guides/components/kbd" },
+            { "title": "mdx-components", "path": "/guides/components/mdx-components" },
+            { "title": "PresetSearch", "path": "/guides/components/preset-search" },
+            { "title": "SearchBar", "path": "/guides/components/search-bar" }
+          ]
+        },
         { "title": "Writing Guidelines", "path": "/guides/writing-guidelines" }
       ]
     },
