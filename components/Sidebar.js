@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 function SidebarSection({ section, currentPath }) {
   const initialOpen = useMemo(() => {
@@ -11,6 +11,13 @@ function SidebarSection({ section, currentPath }) {
   }, [section, currentPath]);
 
   const [isOpen, setIsOpen] = useState(initialOpen);
+
+  useEffect(() => {
+    if (initialOpen) {
+      setIsOpen(true);
+    }
+  }, [initialOpen]);
+
   const collapsible = section.collapsible !== false;
 
   return (
