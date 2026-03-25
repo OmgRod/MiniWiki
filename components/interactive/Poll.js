@@ -8,7 +8,35 @@ const FALLBACK_OPTIONS = [
 
 function normalizeOptions(options) {
   if (Array.isArray(options) && options.length > 0) {
-    return options;
+    return options
+      .map((option) => ({
+        label: String(option?.label || '').trim(),
+        votes: Number(option?.votes || 0),
+      }))
+      .filter((option) => option.label.length > 0);
+  }
+
+  if (typeof options === 'string' && options.trim()) {
+    const raw = options.trim();
+
+    try {
+      const jsonLike = raw
+        .replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":')
+        .replace(/'/g, '"');
+
+      const parsed = JSON.parse(jsonLike);
+
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed
+          .map((option) => ({
+            label: String(option?.label || '').trim(),
+            votes: Number(option?.votes || 0),
+          }))
+          .filter((option) => option.label.length > 0);
+      }
+    } catch {
+      return FALLBACK_OPTIONS;
+    }
   }
 
   return FALLBACK_OPTIONS;
@@ -19,7 +47,7 @@ export default function Poll({
   options = [],
   className = '',
 }) {
-  const normalizedOptions = normalizeOptions(options);
+  const normalizedOptions = useMemo(() => normalizeOptions(options), [options]);
   const [votes, setVotes] = useState(() => normalizedOptions.map((option) => Number(option?.votes || 0)));
 
   useEffect(() => {

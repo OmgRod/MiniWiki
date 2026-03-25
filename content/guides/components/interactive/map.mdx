@@ -1,0 +1,84 @@
+---
+title: Map
+description: OpenStreetMap map component with support for public or self-hosted tiles.
+---
+
+# Map
+
+Use this component to show a location using a package-based map (`react-leaflet` + OpenStreetMap tiles).
+
+## Best for
+
+- Office/location pages
+- Event venue references
+- Contact pages with geographic context
+
+## Notes
+
+- Uses `react-leaflet` and Leaflet for interactive map rendering.
+- Default tiles come from OpenStreetMap (`tile.openstreetmap.org`) and are free.
+- You can point `tileUrl` to your own local/self-hosted tile server for resilience/offline workflows.
+- In MDX pages, coordinates can be passed as strings (recommended in this project).
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | No | Card heading above the map. |
+| `caption` | `string` | No | Supporting text under the title. |
+| `lat` | `number \| string` | No | Latitude coordinate. |
+| `lng` | `number \| string` | No | Longitude coordinate. |
+| `zoom` | `number \| string` | No | Zoom level from 1 to 19. |
+| `height` | `number \| string` | No | Map frame height in pixels. |
+| `tileUrl` | `string` | No | Tile URL template. Defaults to OpenStreetMap tiles. |
+| `attribution` | `string` | No | Tile attribution HTML/text shown by Leaflet. |
+| `markerLabel` | `string` | No | Popup label shown at the marker point. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Live example
+
+<Map
+  title="Tokyo Office"
+  caption="Shibuya area"
+  lat="35.6762"
+  lng="139.6503"
+  zoom="12"
+  height="340"
+  markerLabel="Tokyo Office"
+/>
+
+## Another example
+
+<Map
+  title="NYC Meetup"
+  caption="Midtown Manhattan"
+  lat="40.7549"
+  lng="-73.9840"
+  zoom="13"
+  height="300"
+  markerLabel="NYC Meetup"
+/>
+
+## Code
+
+```mdx
+<Map
+  title="Tokyo Office"
+  caption="Shibuya area"
+  lat="35.6762"
+  lng="139.6503"
+  zoom="12"
+  height="340"
+  markerLabel="Tokyo Office"
+/>
+
+<Map
+  title="NYC Meetup"
+  caption="Midtown Manhattan"
+  lat="40.7549"
+  lng="-73.9840"
+  zoom="13"
+  height="300"
+  markerLabel="NYC Meetup"
+/>
+```

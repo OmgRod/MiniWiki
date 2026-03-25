@@ -1,0 +1,115 @@
+---
+title: Calendar
+description: Month-grid and agenda calendar component for schedules and appointments.
+---
+
+# Calendar
+
+Use this component in two styles:
+- `month` for visual monthly planning
+- `agenda` for date-first appointment lists
+
+## Best for
+
+- Product/release schedules
+- Team appointment tracking
+- Content calendars and editorial planning
+
+## Event format
+
+Each event expects:
+
+- `date` in ISO format like `YYYY-MM-DD`
+- `title` short event title
+- `details` optional extra info (time, owner, context)
+
+In this docs setup, passing `events` as a JSON string is recommended for MDX compatibility.
+
+## Props
+
+| Prop | Type | Required | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | No | Header text for the calendar card. |
+| `mode` | `'month' \| 'agenda'` | No | Calendar mode. Defaults to `month`. |
+| `year` | `number \| string` | No | Year for month mode. |
+| `month` | `number \| string` | No | Month for month mode (`1`-`12`). |
+| `monthNavigation` | `boolean \| string` | No | Enables Prev/Next month switching in month view. Defaults to `true`. |
+| `startMonthSource` | `'today' \| 'first-event' \| 'custom'` | No | Initial month source for month view. Defaults to `today`. |
+| `events` | `{ date: string, title: string, details?: string }[] \| string` | No | Event items for month and agenda views. |
+| `className` | `string` | No | Wrapper classes. |
+
+## Month start behavior
+
+- `startMonthSource="today"` starts on the current month.
+- `startMonthSource="first-event"` starts on the month of the earliest event.
+- `startMonthSource="custom"` uses `year` + `month`.
+
+## Month example
+
+<Calendar
+  title="Q2 Delivery"
+  mode="month"
+  year="2026"
+  month="4"
+  monthNavigation="true"
+  startMonthSource="custom"
+  events='[{"date":"2026-04-03","title":"Beta drop"},{"date":"2026-04-11","title":"Docs freeze"},{"date":"2026-04-23","title":"Public launch","details":"v2.0 release"}]'
+/>
+
+## First-event start example
+
+<Calendar
+  title="Roadmap timeline"
+  mode="month"
+  startMonthSource="first-event"
+  events='[{"date":"2026-07-10","title":"Kickoff"},{"date":"2026-08-02","title":"Milestone 1"},{"date":"2026-09-18","title":"Release candidate"}]'
+/>
+
+## Agenda example
+
+<Calendar
+  title="Team agenda"
+  mode="agenda"
+  events='[{"date":"2026-04-03","title":"Beta review","details":"10:00 • Product + Docs"},{"date":"2026-04-08","title":"Stakeholder sync","details":"14:30 • Roadmap updates"},{"date":"2026-04-23","title":"Launch day","details":"All-hands"}]'
+/>
+
+## Compact agenda example
+
+<Calendar
+  title="Support rota"
+  mode="agenda"
+  events='[{"date":"2026-05-01","title":"On-call: Alex","details":"Primary"},{"date":"2026-05-02","title":"On-call: Sam","details":"Primary"}]'
+/>
+
+## Code
+
+```mdx
+<Calendar
+  title="Q2 Delivery"
+  mode="month"
+  year="2026"
+  month="4"
+  monthNavigation="true"
+  startMonthSource="custom"
+  events='[{"date":"2026-04-03","title":"Beta drop"},{"date":"2026-04-11","title":"Docs freeze"},{"date":"2026-04-23","title":"Public launch","details":"v2.0 release"}]'
+/>
+
+<Calendar
+  title="Roadmap timeline"
+  mode="month"
+  startMonthSource="first-event"
+  events='[{"date":"2026-07-10","title":"Kickoff"},{"date":"2026-08-02","title":"Milestone 1"},{"date":"2026-09-18","title":"Release candidate"}]'
+/>
+
+<Calendar
+  title="Team agenda"
+  mode="agenda"
+  events='[{"date":"2026-04-03","title":"Beta review","details":"10:00 • Product + Docs"},{"date":"2026-04-08","title":"Stakeholder sync","details":"14:30 • Roadmap updates"},{"date":"2026-04-23","title":"Launch day","details":"All-hands"}]'
+/>
+
+<Calendar
+  title="Support rota"
+  mode="agenda"
+  events='[{"date":"2026-05-01","title":"On-call: Alex","details":"Primary"},{"date":"2026-05-02","title":"On-call: Sam","details":"Primary"}]'
+/>
+```

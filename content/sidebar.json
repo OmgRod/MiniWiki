@@ -113,7 +113,9 @@
             { "title": "Interactive Index", "path": "/guides/components/interactive/index" },
             { "title": "Quiz", "path": "/guides/components/interactive/quiz" },
             { "title": "Poll", "path": "/guides/components/interactive/poll" },
-            { "title": "Flashcards", "path": "/guides/components/interactive/flashcards" }
+            { "title": "Flashcards", "path": "/guides/components/interactive/flashcards" },
+            { "title": "Map", "path": "/guides/components/interactive/map" },
+            { "title": "Calendar", "path": "/guides/components/interactive/calendar" }
           ]
         },
         { "title": "Writing Guidelines", "path": "/guides/writing-guidelines" }

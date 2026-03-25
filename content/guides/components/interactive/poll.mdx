@@ -19,11 +19,7 @@ Use this component for lightweight opinion blocks, release preference votes, and
 
 <Poll
   question="Which release note format do you prefer?"
-  options={[
-    { label: 'Short bullets', votes: 10 },
-    { label: 'Detailed narrative', votes: 6 },
-    { label: 'Hybrid', votes: 12 },
-  ]}
+  options='[{"label":"Short bullets","votes":10},{"label":"Detailed narrative","votes":6},{"label":"Hybrid","votes":12}]'
 />
 
 ## Code
@@ -31,10 +27,6 @@ Use this component for lightweight opinion blocks, release preference votes, and
 ```mdx
 <Poll
   question="Which release note format do you prefer?"
-  options={[
-    { label: 'Short bullets', votes: 10 },
-    { label: 'Detailed narrative', votes: 6 },
-    { label: 'Hybrid', votes: 12 },
-  ]}
+  options='[{"label":"Short bullets","votes":10},{"label":"Detailed narrative","votes":6},{"label":"Hybrid","votes":12}]'
 />
 ```

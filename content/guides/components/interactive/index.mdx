@@ -12,6 +12,8 @@ Interactive components are grouped under `components/interactive/`.
 - [Quiz](/guides/components/interactive/quiz)
 - [Poll](/guides/components/interactive/poll)
 - [Flashcards](/guides/components/interactive/flashcards)
+- [Map](/guides/components/interactive/map)
+- [Calendar](/guides/components/interactive/calendar)
 
 ## Quick preview
 
@@ -28,8 +30,21 @@ Interactive components are grouped under `components/interactive/`.
 
 <Poll
   question="Should docs include interactive elements by default?"
-  options={[
-    { label: 'Yes', votes: 18 },
-    { label: 'No', votes: 4 },
-  ]}
+  options='[{"label":"Yes","votes":18},{"label":"No","votes":4}]'
+/>
+
+<Map
+  title="Berlin Office"
+  caption="OpenStreetMap embed"
+  lat="52.52"
+  lng="13.405"
+  zoom="12"
+/>
+
+<Calendar
+  title="Release Month"
+  mode="month"
+  year="2026"
+  month="4"
+  events='[{"date":"2026-04-03","title":"Beta"},{"date":"2026-04-11","title":"Docs review"},{"date":"2026-04-23","title":"Release"}]'
 />

@@ -33,7 +33,7 @@ import {
 } from './charts';
 import { FormulaList, MathEquation, MathSteps, UnitConverter } from './math';
 import { CompoundBreakdown, ElementCard, PeriodicTable } from './science';
-import { Flashcards, Poll, Quiz } from './interactive';
+import { Calendar, Flashcards, Map, Poll, Quiz } from './interactive';
 
 const mdxComponents = {
   Accordion,
@@ -46,6 +46,7 @@ const mdxComponents = {
   Card,
   CardGrid,
   Caption,
+  Calendar,
   CodeBlock,
   CompoundBreakdown,
   DarkModeToggle,
@@ -65,6 +66,7 @@ const mdxComponents = {
   Kbd,
   MathEquation,
   MathSteps,
+  Map,
   PeriodicTable,
   Poll,
   ProgressRingChart,

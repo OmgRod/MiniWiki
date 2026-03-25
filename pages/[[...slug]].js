@@ -308,6 +308,7 @@ export async function getStaticProps({ params }) {
   const mdxSource = await serialize(content, {
     parseFrontmatter: false,
     mdxOptions: {
+      format: 'mdx',
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
         rehypeSlug,
