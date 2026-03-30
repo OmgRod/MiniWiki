@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const { getAllRoutes } = require('../lib/content');
-const { getSiteConfig } = require('../lib/navigation');
+const { siteConfig } = require('../lib/navigation');
 
 const ROOT_DIR = process.cwd();
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
@@ -25,8 +25,6 @@ function ensureProtocol(value = '') {
 }
 
 function resolveSiteUrl() {
-  const siteConfig = getSiteConfig();
-
   const explicit =
     process.env.SITE_URL ||
     process.env.NEXT_PUBLIC_SITE_URL ||

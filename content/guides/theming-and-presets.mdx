@@ -82,7 +82,7 @@ editPageText: Propose an edit
 
 ## Next/previous docs navigation (frontmatter)
 
-MiniWiki automatically shows Previous/Next page buttons for pages that are present in `content/sidebar.json` (using sidebar order).
+MiniWiki automatically shows Previous/Next page buttons based on the `sidebar` section in `miniwiki.config.json`.
 
 You can disable either button per page:
 
@@ -115,6 +115,4 @@ Configure default behavior in `content/site.json`:
 }
 ```
 
-<Callout icon="sparkles">
-Use presets to brand one wiki differently from another without changing core code.
-</Callout>
+Configure theming and presets in the `site` and `templates` sections of `miniwiki.config.json`.

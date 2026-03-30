@@ -25,9 +25,8 @@ This project now uses a full docs structure under `content/guides/`:
 
 ## Navigation
 
-- Top links: `content/header.json`
-- Sidebar sections: `content/sidebar.json`
-- Footer columns/links: `content/footer.json`
+- Top links and sidebar sections are now configured in `miniwiki.config.json`.
+- Footer columns/links are now configured in `miniwiki.config.json`.
 
 ## Config
 
@@ -42,3 +41,22 @@ MiniWiki supports named icons via `lucide-react`:
 <Icon name="settings" />
 <Callout icon="rocket">Launch docs faster.</Callout>
 ```
+
+### Configuration
+
+All configurations are now consolidated in `miniwiki.config.json`. This file contains settings for:
+
+- **Next.js Configuration**: Export paths, locales, and other Next.js settings.
+- **Tailwind CSS**: Theme and plugin configurations.
+- **Navigation**: Header, footer, and sidebar links.
+- **Templates**: Default and custom templates.
+
+#### Example
+
+```javascript
+const config = require('./miniwiki.config');
+
+module.exports = config.nextConfig;
+```
+
+Refer to `miniwiki.config.json` for detailed settings.

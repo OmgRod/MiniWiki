@@ -167,6 +167,12 @@ function buildEditPageUrl({ siteConfig, relativePath, frontmatter }) {
   return null;
 }
 
+const siteConfig = isServer
+  ? JSON.parse(fs.readFileSync(path.join(process.cwd(), 'miniwiki.config.json'), 'utf8'))
+  : null;
+
+const isServer = typeof window === 'undefined';
+
 export default function WikiPage({
   mdxSource,
   title,
@@ -293,7 +299,6 @@ export async function getStaticProps({ params }) {
   const source = fs.readFileSync(filePath, 'utf8');
   const { content, data } = matter(source);
   const relativePath = toPosixPath(path.relative(CONTENT_DIR, filePath));
-  const siteConfig = getSiteConfig(relativePath);
   const templatesConfig = getTemplatesConfig(relativePath);
   const pageTemplatesEnabled = siteConfig?.pageTemplates?.enabled !== false;
   const siteDefaultTemplate =

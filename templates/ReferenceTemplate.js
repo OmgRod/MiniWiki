@@ -1,4 +1,5 @@
 import Badge from '../components/Badge';
+import { useRouter } from 'next/router';
 
 function TableOfContents({ sections = [] }) {
   if (!sections.length) {
@@ -20,8 +21,14 @@ function TableOfContents({ sections = [] }) {
 }
 
 export default function ReferenceTemplate({ title, description, children, templateConfig = {} }) {
+  const router = useRouter();
   const version = templateConfig.version || 'v1';
   const sections = templateConfig.sections || [];
+
+  const handleVersionChange = (event) => {
+    const selectedVersion = event.target.value;
+    router.push(`/docs/${selectedVersion}`);
+  };
 
   return (
     <div>
@@ -29,8 +36,14 @@ export default function ReferenceTemplate({ title, description, children, templa
         <div className="mb-2">
           <Badge variant="success">Reference {version}</Badge>
         </div>
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">{title}</h1>
-        {description ? <p className="mt-2 text-slate-600 dark:text-slate-300">{description}</p> : null}
+        <select
+          value={version}
+          onChange={handleVersionChange}
+          className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-900 outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+        >
+          <option value="v1">v1</option>
+          <option value="v2">v2</option>
+        </select>
       </header>
 
       <div className="grid gap-6 lg:grid-cols-[260px_1fr]">

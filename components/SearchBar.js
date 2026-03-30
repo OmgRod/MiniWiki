@@ -6,7 +6,10 @@ export default function SearchBar({ documents = [], placeholder = 'Search docs..
   const [query, setQuery] = useState('');
 
   const index = useMemo(() => {
-    const searchIndex = new FlexSearch.Index({ tokenize: 'forward' });
+    const searchIndex = new FlexSearch.Index({
+      tokenize: 'forward',
+      suggest: true, // Enable typo tolerance
+    });
 
     documents.forEach((doc, id) => {
       searchIndex.add(id, `${doc.title} ${doc.excerpt} ${doc.route}`);
@@ -20,7 +23,7 @@ export default function SearchBar({ documents = [], placeholder = 'Search docs..
       return [];
     }
 
-    const ids = index.search(query, { limit: 8 });
+    const ids = index.search(query, { limit: 8, suggest: true }); // Use typo tolerance
     return ids.map((id) => documents[id]).filter(Boolean);
   }, [documents, index, query]);
 

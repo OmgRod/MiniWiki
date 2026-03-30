@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import Chart from 'chart.js/auto';
 
 const FALLBACK_OPTIONS = [
   { label: 'Yes', votes: 18 },
@@ -14,29 +15,6 @@ function normalizeOptions(options) {
         votes: Number(option?.votes || 0),
       }))
       .filter((option) => option.label.length > 0);
-  }
-
-  if (typeof options === 'string' && options.trim()) {
-    const raw = options.trim();
-
-    try {
-      const jsonLike = raw
-        .replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":')
-        .replace(/'/g, '"');
-
-      const parsed = JSON.parse(jsonLike);
-
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed
-          .map((option) => ({
-            label: String(option?.label || '').trim(),
-            votes: Number(option?.votes || 0),
-          }))
-          .filter((option) => option.label.length > 0);
-      }
-    } catch {
-      return FALLBACK_OPTIONS;
-    }
   }
 
   return FALLBACK_OPTIONS;
@@ -59,6 +37,24 @@ export default function Poll({
   function vote(index) {
     setVotes((prev) => prev.map((count, idx) => (idx === index ? count + 1 : count)));
   }
+
+  useEffect(() => {
+    const ctx = document.getElementById('pollChart');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: normalizedOptions.map((option) => option.label),
+          datasets: [
+            {
+              data: votes,
+              backgroundColor: ['#4caf50', '#f44336', '#2196f3'],
+            },
+          ],
+        },
+      });
+    }
+  }, [votes, normalizedOptions]);
 
   return (
     <div className={`my-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950/40 ${className}`}>
@@ -88,6 +84,8 @@ export default function Poll({
           );
         })}
       </div>
+
+      <canvas id="pollChart" className="mt-4 w-full" height="200"></canvas>
     </div>
   );
 }

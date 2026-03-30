@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const tailwindConfig = JSON.parse(
+const i18nConfig = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'miniwiki.config.json'), 'utf8')
-).tailwindConfig;
+).i18nConfig;
 
-module.exports = tailwindConfig;
+module.exports = {
+  i18n: i18nConfig,
+};

@@ -70,7 +70,7 @@ export default function PresetSearch({
       return normalizedItems.slice(0, limit);
     }
 
-    return normalizedItems.filter((item) => item.searchable.includes(q)).slice(0, limit);
+    return normalizedItems.filter((item) => item.searchable.includes(q) || item.searchable.startsWith(q)).slice(0, limit); // Added startsWith for better matching
   }, [limit, normalizedItems, query]);
 
   return (
@@ -99,26 +99,20 @@ export default function PresetSearch({
                   {item.tags?.length ? (
                     <div className="mb-3 flex flex-wrap gap-1.5">
                       {item.tags.map((tag) => (
-                        <Badge key={`${item.title}-${tag}`} variant="primary">{tag}</Badge>
+                        <Badge key={tag}>{tag}</Badge>
                       ))}
                     </div>
                   ) : null}
-
-                  {metadataEntries.length ? (
-                    <dl className="space-y-1 text-xs">
-                      {metadataEntries.map(([key, value]) => (
-                        <div key={`${item.title}-${key}`} className="grid grid-cols-[7rem_1fr] gap-2">
-                          <dt className="font-medium text-slate-600 dark:text-slate-300">{key}</dt>
-                          <dd className="text-slate-800 dark:text-slate-100">{toSearchableText(value)}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  ) : null}
+                  {metadataEntries.map(([key, value]) => (
+                    <p key={key} className="text-xs text-slate-500 dark:text-slate-400">
+                      <strong>{key}:</strong> {value}
+                    </p>
+                  ))}
                 </Card>
               );
 
               return (
-                <ResultLink key={`${item.title}-${item.href || 'no-link'}`} href={item.href}>
+                <ResultLink href={item.href} key={item.title}>
                   {card}
                 </ResultLink>
               );
@@ -126,7 +120,7 @@ export default function PresetSearch({
           </CardGrid>
         </div>
       ) : (
-        <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">{emptyMessage}</p>
+        <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">{emptyMessage}</p>
       )}
     </div>
   );

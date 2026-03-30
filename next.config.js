@@ -1,24 +1,16 @@
-const fs = require('node:fs');
-
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-const repository = process.env.GITHUB_REPOSITORY || '';
-const repoName = repository.split('/')[1] || '';
-const hasCustomDomain = fs.existsSync('./CNAME');
-
-const repoBasePath = !hasCustomDomain && repoName ? `/${repoName}` : '';
-
-const nextConfig = {
-  reactStrictMode: true,
-  output: 'export',
+module.exports = {
   trailingSlash: true,
-  env: {
-    NEXT_PUBLIC_BASE_PATH: isGithubActions ? repoBasePath : '',
-  },
-  images: {
-    unoptimized: true,
-  },
-  basePath: isGithubActions ? repoBasePath : '',
-  assetPrefix: isGithubActions && repoBasePath ? `${repoBasePath}/` : undefined,
-};
+  exportPathMap: async function (defaultPathMap) {
+    const locales = ['en', 'es', 'fr', 'de'];
+    const pathMap = {};
+    
+    Object.keys(defaultPathMap).forEach((path) => {
+      locales.forEach((locale) => {
+        const localizedPath = locale === 'en' ? path : `/${locale}${path}`;
+        pathMap[localizedPath] = { ...defaultPathMap[path], query: { locale } };
+      });
+    });
 
-module.exports = nextConfig;
+    return pathMap;
+  },
+};
