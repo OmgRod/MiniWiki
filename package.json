@@ -26,7 +26,7 @@
   "dependencies": {
     "flexsearch": "^0.8.212",
     "gray-matter": "^4.0.3",
-    "katex": "^0.16.25",
+    "katex": "^0.16.45",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.7.0",
     "next": "^16.2.1",
